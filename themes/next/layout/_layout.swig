@@ -54,15 +54,27 @@
           {% block sidebar %}{% endblock %}
         {% endif %}
       </div>
+      <div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
     </main>
 
     <footer id="footer" class="footer">
+      <div class="weixin-box">
+        <div class="weixin-menu">
+          <div class="weixin-hover">
+            <div class="weixin-description">微信扫一扫，加个朋友吧</div>
+          </div>
+        </div>
+      </div>
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
         {% include '_third-party/analytics/analytics-with-widget.swig' %}
         {% block footer %}{% endblock %}
       </div>
-    </footer>
+     </footer>
 
     {% if not theme.sidebar.b2t %}
       <div class="back-to-top">

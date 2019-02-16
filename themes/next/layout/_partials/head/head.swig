@@ -75,6 +75,8 @@
 
 <link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
 
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
 {% endif %}
