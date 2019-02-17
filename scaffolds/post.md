@@ -2,6 +2,8 @@
 title: {{ title }}
 date: {{ date }}
 updated: 
-tags:
+description:
 categories:
+tags:
+comments: true
 ---
