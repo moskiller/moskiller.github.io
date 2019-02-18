@@ -108,6 +108,7 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
+  
 # hexo-symbols-count-time
 ## https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
