@@ -95,7 +95,7 @@ footer:
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  custom_text: Hosted by <a href="https://github.com" class="theme-link" rel="noopener" target="_blank">Github.com</a>
+  #custom_text: Hosted by <a href="https://github.com" class="theme-link" rel="noopener" target="_blank">Github.com</a>
 
 # Creative Commons 4.0 International License.
 # https://creativecommons.org/share-your-work/licensing-types-examples
