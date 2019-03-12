@@ -409,7 +409,7 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family:  Noto Serif SC  #Lato
+    family:  Lato
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
@@ -597,7 +597,7 @@ gitalk:
 # Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,
 # Slashdot,Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: true
+  enable: false
   postbottom:
     enable: false
     options:
@@ -606,7 +606,7 @@ needmoreshare2:
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: true
+    enable: false
     options:
       iconStyle: box
       boxForm: horizontal
@@ -630,7 +630,7 @@ needmoreshare2:
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site
-#baidu_site_verification:
+baidu_site_verification: 3RCsD7Wb3U
 
 # CNZZ count
 #cnzz_siteid:
@@ -716,7 +716,7 @@ busuanzi_count:
 #tencent_mta:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page.
@@ -827,7 +827,7 @@ motion:
     # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
     post_block: fadeIn #主页载入效果
     post_header: bounceRightIn #文章标题载入效果 slideDownIn
-    post_body: slideDownIn 
+    post_body:  slideLeftBigIn #slideDownIn 
     coll_header: slideLeftIn
     # Only for Pisces | Gemini.
     sidebar: slideUpIn

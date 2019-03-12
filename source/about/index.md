@@ -7,20 +7,20 @@ comments: false
 
 # 0x00 关于 Blog
 &ensp;&ensp;本博客自`2018年8月28日16时08分`开通至今<span id="days"></span>，框架程序使用 Hexo，主题使用 NexT，原托管在腾讯云开发者平台上，现托管于 Github，由CloudXNS 提供 DNS 解析服务。
-旧博客地址：<http://moskiller.coding.me>
+旧博客地址：<https://moskiller.coding.me>
 
 # 0x01、关于我
 
 &ensp;&ensp;本人八〇后，性别男，爱好女。非典型Coding爱好者一枚，热爱玩游戏、编程，不修边幅，腹肌0~8块，自带文（zhuang）青（bi）气质。
+**从1997年开始至今的曼联球迷**
 有时文艺，有时严肃，有时逗比。喜欢折腾一些东西，不擅长与人交流。初中开始接触电脑以及编程，自称中级电脑高手高高手。
 不喜欢泛娱乐化与历史虚无主义，有时候会回忆起过去的事物。对未来感到彷徨但并不会惧怕。
-希望在这里可以认识更多的朋友，大家一起交流、学习，一起进步。  
   
 
-你可以在这些地方找到我：  
+你可以使用下面的方式找到我：  
 
 邮箱： <span class="heimu" title="你知道的太多了，哼哼哼"> admin$vincent.ga  //请自行将 $ 符号换回 @ 符号 </span>
-GitHub： <span class="heimu" title="你知道的太多了，哼哼哼"> moskiller　　//欢迎Star，有Follow就更好了(☆ω☆) </span>  
+  
   
 
  
