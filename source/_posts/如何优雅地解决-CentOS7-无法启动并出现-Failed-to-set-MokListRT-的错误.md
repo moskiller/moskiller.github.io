@@ -9,13 +9,14 @@ tags: CentOS
 ---
 
 ## 问题描述
+
 &emsp;&emsp;今天突然心血来潮，将我的 Ubuntu 18.04 系统给干掉了，在 [CentOS Project](https://www.centos.org) 里下了一个最新版的 [CentOS7 X86_64 1801](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso) ISO刻录光碟后进行 CentOS 系统的安装，安装完成重启后却发现开不了机，报错内容如下：
 ```
 Failed to set MokListRT: Invalid Parameter
 Something as gone seriously wrong: import_mok_state() failed:
 Invalid Parameter
 ```
-  
+
 ## 错误原因
 &emsp;&emsp; 有问题，上 Google ，查了一下发现错误原因主要是由于 `shim` 和 `mokutil` 两个软件包升级到高版本后，不支持我这台破机的配置，所以解决方法就是对这两个版本进行一些优雅的小操作。  
 
@@ -39,9 +40,9 @@ echo 'exclude=shim*_,_mokutil*' >> /etc/yum.conf
 yum update
 ```
 这样，以后你使用 `yum update` 命令进行升级也不会升级这两个包了。
-  
-    
+
+
 最后，附上参考文章的地址 [CentOS 7: Failed to set MokListRT: Invalid Parameter](https://angrysysadmins.tech/index.php/2018/12/grassyloki/centos-7-failed-set-moklistrt/)
-  
+
   
 
