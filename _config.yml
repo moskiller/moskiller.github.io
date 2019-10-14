@@ -85,7 +85,7 @@ deploy:
 # Backup
 backup:
     type: git
-    theme: next
+    theme: next7
     repository:
        github: git@github.com:moskiller/moskiller.github.io.git,Source
 

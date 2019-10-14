@@ -10,8 +10,12 @@ tags: DSDT 黑苹果
 
 ### 前言
 
-​    对于Hackinto电脑来说，正确的clover、config.plist和kext只能确保大部分电脑可以正常安装MacOS，但并不一定能保证能正常使用。在启动时，电脑会去读取ACPI的配置，不当的DSDT和SSDT有可能会导致出现系统启动失败、无法休眠、电池电量无法显示等很多奇奇怪怪的问题。很多人都知道使用DSDT补丁可以开双核，但DSDT的功能不仅仅如此，还可以修复显卡、声卡、网卡、电池、休眠等问题。
-
+​    对于Hackinto电脑来说，正确的clover、config.plist和kext只能确保大部分电脑可以正常安装MacOS，但并不一定能保证能正常使用。在启动时，电脑会去读取ACPI的配置，不当的DSDT和SSDT有可能会导致出现系统启动失败、无法休眠、电池电量无法显示等很多奇奇怪怪的问题。很多人都知道使用DSDT补丁可以开双核，但DSDT的功能不仅仅如此，还可以**修复**显卡、声卡、网卡、电池、休眠等问题。
+​    
+​    
+**DSDT只是描述你硬件的文件，并不是驱动文件，它只是告诉你的MacOS系统，你的主板上都有些什么硬件，如果你的MacOS并不支持这种硬件，那么DSDT也无法驱动你的这个硬件！！！**
+​    
+​    
 这里是你在MacOS中修复DSDT时需要用到的软件：[MaciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip) (RehabMan 2018-0507版)
 
 以下例子是我在修复DSDT中常见的问题，如果以后有新的问题会继续更新。
