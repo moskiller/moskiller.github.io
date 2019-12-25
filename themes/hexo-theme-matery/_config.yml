@@ -66,8 +66,8 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 我的梦想
-  text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+  title: 学会成长
+  text: 成长不是发现世界越发黑暗的过程，而是发现世界越发复杂的过程，儿时觉得世界美好是因为简单，爱你的人都为你挡掉了复杂，世界没有很糟糕也没有很美好，它只是很复杂，只有好的一面或坏的一面都不真实，成长就是认识到这些，然后相信自己，选择相信的
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
@@ -200,7 +200,7 @@ clicklove:
 profile:
   avatar: /medias/avatar.jpg
   career: 基层打工仔
-  introduction: 现实的抽象是语言，语言的抽象是程序，程序的抽象是数理逻辑，数理逻辑的抽象是超越认知的真理。
+  introduction: 这个世界很疯狂，没人性，腐败。而您却一直清醒，温柔，一尘不染。
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -388,6 +388,7 @@ libs:
     ribbonRefresh: /libs/background/ribbon-refresh.min.js
     ribbon_dynamic: /libs/background/ribbon-dynamic.js
     instantpage: /libs/instantpage/instantpage.js
+    typed: https://cdn.bootcss.com/typed.js/2.0.11/typed.min.js
 
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
