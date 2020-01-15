@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>VinceNT.范&#39;s Blog</title>
+  
+  <subtitle>时间背着我悄悄捏碎了从前</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://4-k.net/"/>
+  <updated>2020-01-13T02:21:27.973Z</updated>
+  <id>https://4-k.net/</id>
+  
+  <author>
+    <name>VinceNT.范</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>又是一年春运时</title>
+    <link href="https://4-k.net/2020/you-shi-yi-nian-chun-yun-shi/"/>
+    <id>https://4-k.net/2020/you-shi-yi-nian-chun-yun-shi/</id>
+    <published>2020-01-09T16:01:51.000Z</published>
+    <updated>2020-01-13T02:21:27.973Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;又是一年将尽时，&lt;/p&gt;
+&lt;p&gt;一岁年轮一岁心。&lt;/p&gt;
+&lt;p&gt;漫漫红尘走一回，&lt;/p&gt;
+&lt;p&gt;多少寻觅皆成空。&lt;/p&gt;
+&lt;p&gt;聚散依依几多情愁，&lt;/p&gt;
+&lt;p&gt;月缺月盈几多悲喜。&lt;/p&gt;
+&lt;p&gt;感谢时光中的每一次遇见，&lt;/p&gt;
+&lt;p&gt;因为陪伴，岁月更加温暖。&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="心情の随笔" scheme="https://4-k.net/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="心情" scheme="https://4-k.net/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好像很忙的样子</title>
+    <link href="https://4-k.net/2019/hao-xiang-hen-mang-de-yang-zi/"/>
+    <id>https://4-k.net/2019/hao-xiang-hen-mang-de-yang-zi/</id>
+    <published>2019-12-21T08:30:48.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      我在忙，拼命忙，继续忙...
+    
+    </summary>
+    
+    
+      <category term="心情の随笔" scheme="https://4-k.net/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="心情" scheme="https://4-k.net/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复DSDT时常用错误的处理办法</title>
+    <link href="https://4-k.net/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/"/>
+    <id>https://4-k.net/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/</id>
+    <published>2019-10-14T01:28:29.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      对于黑苹果电脑来说，DSDT和SSDT修复是必备技能之一。这里是DSDT修复中常用的几个错误的修复办法。
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="DSDT 黑苹果" scheme="https://4-k.net/tags/DSDT-%E9%BB%91%E8%8B%B9%E6%9E%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地保存你在Github上的Hexo源代码</title>
+    <link href="https://4-k.net/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/"/>
+    <id>https://4-k.net/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</id>
+    <published>2019-09-29T09:34:46.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      如果换了电脑或者重装系统后，怎样才以继续更新博客？
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="Github Hexo" scheme="https://4-k.net/tags/Github-Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>又一次船新启航...</title>
+    <link href="https://4-k.net/2019/you-yi-ci-chuan-xin-qi-hang/"/>
+    <id>https://4-k.net/2019/you-yi-ci-chuan-xin-qi-hang/</id>
+    <published>2019-09-29T07:33:01.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      噫，又启航了......
+    
+    </summary>
+    
+    
+      <category term="心情の随笔" scheme="https://4-k.net/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="心情" scheme="https://4-k.net/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地解决 CentOS7 无法启动并出现 Failed to set MokListRT 的错误</title>
+    <link href="https://4-k.net/2019/ru-he-you-ya-di-jie-jue-centos7-wu-fa-qi-dong-bing-chu-xian-failed-to-set-moklistrt-de-cuo-wu/"/>
+    <id>https://4-k.net/2019/ru-he-you-ya-di-jie-jue-centos7-wu-fa-qi-dong-bing-chu-xian-failed-to-set-moklistrt-de-cuo-wu/</id>
+    <published>2019-03-08T02:53:01.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      今天重装CentOS7(1810)的时候，在系统安装完成并重启的时候，出现了 Failed to set MokListRT 的错误提示后系统自动关机了，无法正常启动，于是到谷歌找了一下资料，按照大神的提示操作后系统终于可以正常启动了，特此记录下来。
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="CentOS" scheme="https://4-k.net/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地在Vultr的VPS上添加SWAP交换分区</title>
+    <link href="https://4-k.net/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/"/>
+    <id>https://4-k.net/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/</id>
+    <published>2019-02-26T07:55:35.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      Vultr的VPS主机预设置是不会有swap交换分区，如何手动添加swap呢？Follow me~
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="VPS" scheme="https://4-k.net/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地一键安装最新内核并开启Google BBR</title>
+    <link href="https://4-k.net/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/"/>
+    <id>https://4-k.net/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</id>
+    <published>2019-02-25T07:06:32.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      在Vultr的VPS服务器上自建了一个 SSR 后 ，发现速度并不是很理想，那么，Google BBR走起~~
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="VPS" scheme="https://4-k.net/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）</title>
+    <link href="https://4-k.net/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/"/>
+    <id>https://4-k.net/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/</id>
+    <published>2019-02-25T03:35:27.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      用了一段时间的免费SS、SSR后，感觉还是不爽，于是决定自己入手了一台 Vultr 的VPS服务器，自己搭建SSR来玩。
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="VPS" scheme="https://4-k.net/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>时光匆匆催人老，少年如今苍须飘</title>
+    <link href="https://4-k.net/2019/shi-guang-cong-cong-cui-ren-lao-shao-nian-ru-jin-cang-xu-piao/"/>
+    <id>https://4-k.net/2019/shi-guang-cong-cong-cui-ren-lao-shao-nian-ru-jin-cang-xu-piao/</id>
+    <published>2019-02-20T08:26:39.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      这个世界上，大部分人选择的路，或许不是最适合自己的，但一定是这个社会自然选择的结果。
+    
+    </summary>
+    
+    
+      <category term="心情の随笔" scheme="https://4-k.net/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="心情" scheme="https://4-k.net/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自用的优秀网站汇总(持续更新)</title>
+    <link href="https://4-k.net/2019/zi-yong-de-you-xiu-wang-zhan-hui-zong-chi-xu-geng-xin/"/>
+    <id>https://4-k.net/2019/zi-yong-de-you-xiu-wang-zhan-hui-zong-chi-xu-geng-xin/</id>
+    <published>2019-02-19T07:38:24.000Z</published>
+    <updated>2020-01-10T10:17:00.938Z</updated>
+    
+    <summary type="html">
+    
+      别误会，这不是一个网站导航，只是我平常经常去逛的网站地址而已...
+    
+    </summary>
+    
+    
+      <category term="优雅の分享" scheme="https://4-k.net/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="网站分享" scheme="https://4-k.net/tags/%E7%BD%91%E7%AB%99%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年，新年快乐</title>
+    <link href="https://4-k.net/2019/2019-nian-xin-nian-kuai-le/"/>
+    <id>https://4-k.net/2019/2019-nian-xin-nian-kuai-le/</id>
+    <published>2019-02-05T02:22:22.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;转眼间，2018挥手告别&quot;&gt;&lt;a href=&quot;#转眼间，2018挥手告别&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="心情の随笔" scheme="https://4-k.net/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="2019" scheme="https://4-k.net/tags/2019/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年第一篇博文</title>
+    <link href="https://4-k.net/2019/2019-nian-di-yi-pian-bo-wen/"/>
+    <id>https://4-k.net/2019/2019-nian-di-yi-pian-bo-wen/</id>
+    <published>2019-01-30T04:00:40.000Z</published>
+    <updated>2020-01-10T10:17:00.937Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;电脑硬盘挂了&quot;&gt;&lt;a href=&quot;#电脑硬盘挂了&quot; class=&quot;headerlink&quot; title=&quot;电脑硬盘挂了&quot;&gt;&lt;/a&gt;电脑硬盘挂了&lt;/h2&gt;&lt;p&gt;所有文件都没了。包括Hexo的配置和博文。。。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="建博の笔记" scheme="https://4-k.net/categories/%E5%BB%BA%E5%8D%9A%E3%81%AE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo" scheme="https://4-k.net/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
