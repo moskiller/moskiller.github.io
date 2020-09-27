@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://4-k.net
+url: https://zbmm.vip
 root: /
 permalink: :year/:title/
 permalink_defaults:
