@@ -6,17 +6,20 @@
 title: VinceNT.范's Blog
 subtitle: 时间背着我悄悄捏碎了从前
 description: 安 静 的 美 月半 子
-keywords:
+keywords: VinceNT.范
 author: VinceNT.范
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://zbmm.vip
 root: /
 permalink: :year/:title/
-permalink_defaults:
+permalink_defaults: ''
+pretty_urls: 
+  trailing_index: true
+  trailing_html: true
 
 # Directory
 source_dir: source
@@ -31,8 +34,12 @@ skip_render: CNAME README.md
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
+auto_spacing: false
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
@@ -40,18 +47,15 @@ relative_link: false
 future: true
 highlight:
   enable: false
+  auto_detect: false
   line_number: true
-  auto_detect: true
-  tab_replace:
-  
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 12
-  order_by: -date
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs: 
+  enable: true
+  preprocess: true
+  tab_replace: ''
   
 # Category & Tag
 default_category: uncategorized
@@ -64,6 +68,7 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+updated_option: mtime
 
 # Pagination
 ## Set per_page to 0 to disable pagination
