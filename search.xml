@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2019年，新年快乐</title>
+    <url>/2019/2019-nian-xin-nian-kuai-le/</url>
+    <content><![CDATA[<h2 id="转眼间，2018挥手告别"><a href="#转眼间，2018挥手告别" class="headerlink" title="转眼间，2018挥手告别"></a>转眼间，2018挥手告别</h2><p>&ensp;&ensp;一年时间又过去了，想一想好像也只是搞定了房子，其它的计划都没有实现，希望2019年可以实现吧！祝大家新年快乐，身体健康，财源广进。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>2019</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2019年第一篇博文</title>
     <url>/2019/2019-nian-di-yi-pian-bo-wen/</url>
     <content><![CDATA[<h2 id="电脑硬盘挂了"><a href="#电脑硬盘挂了" class="headerlink" title="电脑硬盘挂了"></a>电脑硬盘挂了</h2><p>所有文件都没了。包括Hexo的配置和博文。。。</p>
@@ -15,18 +27,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2019年，新年快乐</title>
-    <url>/2019/2019-nian-xin-nian-kuai-le/</url>
-    <content><![CDATA[<h2 id="转眼间，2018挥手告别"><a href="#转眼间，2018挥手告别" class="headerlink" title="转眼间，2018挥手告别"></a>转眼间，2018挥手告别</h2><p>&ensp;&ensp;一年时间又过去了，想一想好像也只是搞定了房子，其它的计划都没有实现，希望2019年可以实现吧！祝大家新年快乐，身体健康，财源广进。</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>2019</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>「你快乐，所以我快乐」</title>
     <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
     <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
@@ -38,6 +38,19 @@
 <p>因为有时是别无选择的结果，</p>
 <p>做着不喜欢的工作赚着微薄的薪水。</p>
 <p>洗洗睡吧，梦里啥都有！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>　换手机了</title>
+    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
+    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
+<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
 ]]></content>
       <categories>
         <category>心情の随笔</category>
@@ -148,18 +161,6 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
-    <title>又一次船新启航...</title>
-    <url>/2019/you-yi-ci-chuan-xin-qi-hang/</url>
-    <content><![CDATA[<h1 id="又一次船新启航……"><a href="#又一次船新启航……" class="headerlink" title="又一次船新启航……"></a>又一次船新启航……</h1><p>  <del>大家好，我是渣渣辉……..</del>　大家好，我终于回来了，经过几个月的冼脑式学习，我觉得我越来越Low了，谢谢！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>又是一年春运时</title>
     <url>/2020/you-shi-yi-nian-chun-yun-shi/</url>
     <content><![CDATA[<p>又是一年将尽时，</p>
@@ -179,10 +180,9 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
-    <title>　换手机了</title>
-    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
-    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
-<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
+    <title>又一次船新启航...</title>
+    <url>/2019/you-yi-ci-chuan-xin-qi-hang/</url>
+    <content><![CDATA[<h1 id="又一次船新启航……"><a href="#又一次船新启航……" class="headerlink" title="又一次船新启航……"></a>又一次船新启航……</h1><p>  <del>大家好，我是渣渣辉……..</del>　大家好，我终于回来了，经过几个月的冼脑式学习，我觉得我越来越Low了，谢谢！</p>
 ]]></content>
       <categories>
         <category>心情の随笔</category>
@@ -252,7 +252,7 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
 </li>
 <li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
 </li>
-<li><p>使用git clone <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+<li><p>使用git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
 </li>
 <li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
 </li>
@@ -305,81 +305,6 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
       </categories>
       <tags>
         <tag>Github Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何优雅地在Vultr的VPS上添加SWAP交换分区</title>
-    <url>/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/</url>
-    <content><![CDATA[<blockquote>
-<p>首先，贴上<a href="https://www.vultr.com/docs/setup-swap-file-on-linux">Vultr官方的设置方法</a>的地址，<br>英文好的童鞋直接照着操作就行了，毕竟官方嘛，你懂的。  </p>
-</blockquote>
-<p>以下是官方原文:  </p>
-<h2 id="Setup-Swap-File-on-Linux"><a href="#Setup-Swap-File-on-Linux" class="headerlink" title="Setup Swap File on Linux"></a>Setup Swap File on Linux</h2><p>There will be times where you need to increase the responsiveness of your server to prevent out of memory issues. Out of memory issues happen when an application running on your server starts consuming a large amount of memory. Swap is designed as virtual memory, which uses your harddrive to store data that cannot be held in RAM. This tutorial will show you how to create a swap file, which should work under Ubuntu, CentOS, and Debian. This tutorial is not meant for any Custom ISO, but it is possible to follow along.</p>
-<p><strong>Step 1: Verify that swap does not exist</strong></p>
-<p>To prevent any issues during this tutorial, you will need to run the following to verify that a swap space is currently not active:</p>
-<p><code>free -m</code>  </p>
-<p>After running that command you should see something similar to this output:</p>
-<pre class="line-numbers language-none"><code class="language-none">total              used       free     shared    buffers     cached
-Mem:               1840       1614     226       15          36       1340
--&#x2F;+ buffers&#x2F;cache:            238      1602
-Swap:              0          0        0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>If you see a value of 0 in the Swap section, then you can proceed to step 2.</p>
-<p>Alternatively, you can run the following command to see if there is a configured swap file:</p>
-<p><code>swapon -s</code></p>
-<p>If you do not see any output from swapon, then proceed to step 2.</p>
-<p><strong>Step 2: Create swap file</strong></p>
-<p>You will need to choose a location for your file. In this tutorial, it will be stored at the root of the server. We will create a 2GB swap file by running the following command:  </p>
-<p><code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code>  </p>
-<p>The dd command will produce output in a similar format to:</p>
-<pre class="line-numbers language-none"><code class="language-none">2048+0 records in
-2048+0 records out
-2147483648 bytes (2.1 GB) copied, 10.5356 s, 204 MB&#x2F;s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>Next, verify that the file is located at the root of your Vultr VPS by running:</p>
-<p><code>ls / | grep swapfile</code></p>
-<p>Proceed if you see the swapfile file.</p>
-<p><strong>Step 3: Activate the swap file</strong></p>
-<p>Swap files are not recognized automatically. We will need to tell the server how to format the file and enable it so it can be used as a valid swap file. As a security measure, update the swapfile permissions to only allow R/W for root and no other users. Run:</p>
-<p><code>chmod 600 /swapfile</code></p>
-<p>The permission change can be verified by running the following command:</p>
-<p><code>ls -lh /swapfile</code></p>
-<p>You will see a file display:</p>
-<pre class="line-numbers language-none"><code class="language-none">-rw------- 1 root root 2.0G Oct  2 18:47 &#x2F;swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Next, tell the server to setup the swap file by running:</p>
-<p><code>mkswap /swapfile</code></p>
-<p>After running it, you will see the following output:</p>
-<p>Setting up swapspace version 1, size = 2097148 KiB<br>no label, UUID=ff3fc469-9c4b-4913-b653-ec53d6460d0e<br>If everything is shown as above, you are now ready to move on to the next step.</p>
-<p><strong>Step 4: Turn swap on</strong></p>
-<p>Once your file is ready to be used as swap, you need to enable it by running:</p>
-<p><code>swapon /swapfile</code></p>
-<p>You can verify that the swap file is active by running the free command again.</p>
-<p><code>free -m</code></p>
-<pre class="line-numbers language-none"><code class="language-none">total       used       free     shared    buffers     cached
-Mem:          1840       1754         86         16         23       1519
--&#x2F;+ buffers&#x2F;cache:        210       1630
-Swap:         2047          0       2047<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>If Swap shows something other than 0, then you have successfully setup swap.</p>
-<p><strong>Step 5: Enable swap on reboot</strong></p>
-<p>By default, your server will not automatically enable this new swap file. To enable it on boot, you can update the /etc/fstab file. Any text editor will suffice. In this example, I will be using nano.</p>
-<p><code>nano /etc/fstab</code></p>
-<p>Add the following line at the end of the file:</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;swapfile   none    swap    sw    0   0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>Save and close when you are finished editing the file. We are all done!</p>
-<h2 id="以上的英文我都会，但是…-请说人话！！！"><a href="#以上的英文我都会，但是…-请说人话！！！" class="headerlink" title="以上的英文我都会，但是… 请说人话！！！"></a><del>以上的英文我都会，但是…</del> 请说人话！！！</h2><p>emmm….其实也就是几句话，首先用root登陆你的VPS。然后按以下步骤操作：</p>
-<ol>
-<li>运行&emsp; <code>free -m</code> &emsp;或者&emsp; <code>swapon -s</code> &emsp;命令，随便一个都可以，检测是否已存在SWAP分区。</li>
-<li>如果无SWAP分区，那么就运行&emsp; <code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code> &emsp;这个命令来建立SWAP分区文件。<strong>注意，Count=2048 这个参数</strong>，这里的2048代表是2GB，如果你按这个命令输入的话，你将会创建一个2GB大小的SWAP分区，要是你想建立1GB的SWAP分区的话，将<code>2048</code>修改为<code>1024</code>即可。</li>
-<li>使用&emsp; <code>chmod 600 /swapfile</code> &emsp;命令赋予权限给SWAP文件。然后，使用<code>mkswap /swapfile</code> &emsp;命令来格式化SWAP文件。</li>
-<li>使用&emsp;<code>swapon /swapfile</code> &emsp;命令来激活SWAP文件。</li>
-<li>如果你要VPS主机重启的时候可以自动挂载Swap ，那么还需要修改fstab配置文件，用Vim或者Nano打开/etc/fstab文件，比如你使用的是nano，那么命令如下：&emsp; <code>nano /etc/fstab</code>，&emsp;然后在打开的文件最后面添加这一行字：&emsp; <code>/swapfile   none    swap    sw    0   0</code> &emsp; ，保存并关闭文件后，整个世界安静了！！！</li>
-</ol>
-]]></content>
-      <categories>
-        <category>优雅の分享</category>
-      </categories>
-      <tags>
-        <tag>VPS</tag>
       </tags>
   </entry>
   <entry>
@@ -493,6 +418,81 @@ Shadowsocks-libev 版：
       </tags>
   </entry>
   <entry>
+    <title>如何优雅地在Vultr的VPS上添加SWAP交换分区</title>
+    <url>/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/</url>
+    <content><![CDATA[<blockquote>
+<p>首先，贴上<a href="https://www.vultr.com/docs/setup-swap-file-on-linux">Vultr官方的设置方法</a>的地址，<br>英文好的童鞋直接照着操作就行了，毕竟官方嘛，你懂的。  </p>
+</blockquote>
+<p>以下是官方原文:  </p>
+<h2 id="Setup-Swap-File-on-Linux"><a href="#Setup-Swap-File-on-Linux" class="headerlink" title="Setup Swap File on Linux"></a>Setup Swap File on Linux</h2><p>There will be times where you need to increase the responsiveness of your server to prevent out of memory issues. Out of memory issues happen when an application running on your server starts consuming a large amount of memory. Swap is designed as virtual memory, which uses your harddrive to store data that cannot be held in RAM. This tutorial will show you how to create a swap file, which should work under Ubuntu, CentOS, and Debian. This tutorial is not meant for any Custom ISO, but it is possible to follow along.</p>
+<p><strong>Step 1: Verify that swap does not exist</strong></p>
+<p>To prevent any issues during this tutorial, you will need to run the following to verify that a swap space is currently not active:</p>
+<p><code>free -m</code>  </p>
+<p>After running that command you should see something similar to this output:</p>
+<pre class="line-numbers language-none"><code class="language-none">total              used       free     shared    buffers     cached
+Mem:               1840       1614     226       15          36       1340
+-&#x2F;+ buffers&#x2F;cache:            238      1602
+Swap:              0          0        0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>If you see a value of 0 in the Swap section, then you can proceed to step 2.</p>
+<p>Alternatively, you can run the following command to see if there is a configured swap file:</p>
+<p><code>swapon -s</code></p>
+<p>If you do not see any output from swapon, then proceed to step 2.</p>
+<p><strong>Step 2: Create swap file</strong></p>
+<p>You will need to choose a location for your file. In this tutorial, it will be stored at the root of the server. We will create a 2GB swap file by running the following command:  </p>
+<p><code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code>  </p>
+<p>The dd command will produce output in a similar format to:</p>
+<pre class="line-numbers language-none"><code class="language-none">2048+0 records in
+2048+0 records out
+2147483648 bytes (2.1 GB) copied, 10.5356 s, 204 MB&#x2F;s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Next, verify that the file is located at the root of your Vultr VPS by running:</p>
+<p><code>ls / | grep swapfile</code></p>
+<p>Proceed if you see the swapfile file.</p>
+<p><strong>Step 3: Activate the swap file</strong></p>
+<p>Swap files are not recognized automatically. We will need to tell the server how to format the file and enable it so it can be used as a valid swap file. As a security measure, update the swapfile permissions to only allow R/W for root and no other users. Run:</p>
+<p><code>chmod 600 /swapfile</code></p>
+<p>The permission change can be verified by running the following command:</p>
+<p><code>ls -lh /swapfile</code></p>
+<p>You will see a file display:</p>
+<pre class="line-numbers language-none"><code class="language-none">-rw------- 1 root root 2.0G Oct  2 18:47 &#x2F;swapfile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Next, tell the server to setup the swap file by running:</p>
+<p><code>mkswap /swapfile</code></p>
+<p>After running it, you will see the following output:</p>
+<p>Setting up swapspace version 1, size = 2097148 KiB<br>no label, UUID=ff3fc469-9c4b-4913-b653-ec53d6460d0e<br>If everything is shown as above, you are now ready to move on to the next step.</p>
+<p><strong>Step 4: Turn swap on</strong></p>
+<p>Once your file is ready to be used as swap, you need to enable it by running:</p>
+<p><code>swapon /swapfile</code></p>
+<p>You can verify that the swap file is active by running the free command again.</p>
+<p><code>free -m</code></p>
+<pre class="line-numbers language-none"><code class="language-none">total       used       free     shared    buffers     cached
+Mem:          1840       1754         86         16         23       1519
+-&#x2F;+ buffers&#x2F;cache:        210       1630
+Swap:         2047          0       2047<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>If Swap shows something other than 0, then you have successfully setup swap.</p>
+<p><strong>Step 5: Enable swap on reboot</strong></p>
+<p>By default, your server will not automatically enable this new swap file. To enable it on boot, you can update the /etc/fstab file. Any text editor will suffice. In this example, I will be using nano.</p>
+<p><code>nano /etc/fstab</code></p>
+<p>Add the following line at the end of the file:</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;swapfile   none    swap    sw    0   0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Save and close when you are finished editing the file. We are all done!</p>
+<h2 id="以上的英文我都会，但是…-请说人话！！！"><a href="#以上的英文我都会，但是…-请说人话！！！" class="headerlink" title="以上的英文我都会，但是… 请说人话！！！"></a><del>以上的英文我都会，但是…</del> 请说人话！！！</h2><p>emmm….其实也就是几句话，首先用root登陆你的VPS。然后按以下步骤操作：</p>
+<ol>
+<li>运行&emsp; <code>free -m</code> &emsp;或者&emsp; <code>swapon -s</code> &emsp;命令，随便一个都可以，检测是否已存在SWAP分区。</li>
+<li>如果无SWAP分区，那么就运行&emsp; <code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code> &emsp;这个命令来建立SWAP分区文件。<strong>注意，Count=2048 这个参数</strong>，这里的2048代表是2GB，如果你按这个命令输入的话，你将会创建一个2GB大小的SWAP分区，要是你想建立1GB的SWAP分区的话，将<code>2048</code>修改为<code>1024</code>即可。</li>
+<li>使用&emsp; <code>chmod 600 /swapfile</code> &emsp;命令赋予权限给SWAP文件。然后，使用<code>mkswap /swapfile</code> &emsp;命令来格式化SWAP文件。</li>
+<li>使用&emsp;<code>swapon /swapfile</code> &emsp;命令来激活SWAP文件。</li>
+<li>如果你要VPS主机重启的时候可以自动挂载Swap ，那么还需要修改fstab配置文件，用Vim或者Nano打开/etc/fstab文件，比如你使用的是nano，那么命令如下：&emsp; <code>nano /etc/fstab</code>，&emsp;然后在打开的文件最后面添加这一行字：&emsp; <code>/swapfile   none    swap    sw    0   0</code> &emsp; ，保存并关闭文件后，整个世界安静了！！！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何优雅地解决 CentOS7 无法启动并出现 Failed to set MokListRT 的错误</title>
     <url>/2019/ru-he-you-ya-di-jie-jue-centos7-wu-fa-qi-dong-bing-chu-xian-failed-to-set-moklistrt-de-cuo-wu/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>&emsp;&emsp;今天突然心血来潮，将我的 Ubuntu 18.04 系统给干掉了，在 <a href="https://www.centos.org/">CentOS Project</a> 里下了一个最新版的 <a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso">CentOS7 X86_64 1801</a> ISO刻录光碟后进行 CentOS 系统的安装，安装完成重启后却发现开不了机，报错内容如下：</p>
@@ -526,22 +526,6 @@ yum update<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
       </categories>
       <tags>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时光匆匆催人老，少年如今苍须飘</title>
-    <url>/2019/shi-guang-cong-cong-cui-ren-lao-shao-nian-ru-jin-cang-xu-piao/</url>
-    <content><![CDATA[<blockquote>
-<p>未老已衰之石, 未冷已冻之水,<br>未生已死之身, 未灼已化之魂。</p>
-</blockquote>
-<p>&emsp;&emsp;在人生的3.0阶段，最大的感慨就是再也熬不起夜了。我必须像个5.0版本的老人家一样早睡，但又不能像他一样早起，那种熬个通宵，睡一觉又生龙活虎的年纪，那些青葱时光，终究还是，逝去了。再也不会回来。嗯，的确是个悲伤的故事啊。  </p>
-<p>&emsp;&emsp;故人今在否？旧江山浑是新愁。欲买桂花同载酒，终不似，少年游。–（宋）刘过《唐多令·芦叶满汀洲》  </p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
       </tags>
   </entry>
   <entry>
@@ -642,6 +626,22 @@ yum update<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
       </categories>
       <tags>
         <tag>网站分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>时光匆匆催人老，少年如今苍须飘</title>
+    <url>/2019/shi-guang-cong-cong-cui-ren-lao-shao-nian-ru-jin-cang-xu-piao/</url>
+    <content><![CDATA[<blockquote>
+<p>未老已衰之石, 未冷已冻之水,<br>未生已死之身, 未灼已化之魂。</p>
+</blockquote>
+<p>&emsp;&emsp;在人生的3.0阶段，最大的感慨就是再也熬不起夜了。我必须像个5.0版本的老人家一样早睡，但又不能像他一样早起，那种熬个通宵，睡一觉又生龙活虎的年纪，那些青葱时光，终究还是，逝去了。再也不会回来。嗯，的确是个悲伤的故事啊。  </p>
+<p>&emsp;&emsp;故人今在否？旧江山浑是新愁。欲买桂花同载酒，终不似，少年游。–（宋）刘过《唐多令·芦叶满汀洲》  </p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
       </tags>
   </entry>
 </search>
