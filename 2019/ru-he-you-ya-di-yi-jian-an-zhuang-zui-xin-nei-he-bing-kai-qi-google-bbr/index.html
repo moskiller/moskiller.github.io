@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何优雅地一键安装最新内核并开启Google BBR, VinceNT.范&#39;s Blog">
+    <meta name="keywords" content="如何优雅地一键安装最新内核并开启Google BBR, VinceNT.范">
     <meta name="description" content="安 静 的 美 月半 子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,7 +29,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="VinceNT.范's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
 
 
 <body>
@@ -356,8 +359,7 @@
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -369,7 +371,7 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -442,7 +444,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/优雅の分享/" class="post-category">
+                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
                                 优雅の分享
                             </a>
                         
@@ -462,14 +464,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-01-10
+                    2020-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    589
+                    597
                 </div>
                 
 
@@ -489,12 +491,20 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>&emsp;&emsp;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。<br>&emsp;&emsp;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。于是就有大神根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 的脚本。</p>
 <h2 id="适用环境"><a href="#适用环境" class="headerlink" title="适用环境"></a>适用环境</h2><blockquote>
 <p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
-<p> 本文转载自：<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">秋水逸冰 » 一键安装最新内核并开启 BBR 脚本</a>  </p>
+<p> 本文转载自：<a target="_blank" rel="noopener" href="https://teddysun.com/489.html">秋水逸冰 » 一键安装最新内核并开启 BBR 脚本</a>  </p>
 <p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等<br>内存要求：≥128M<br>日期　　：2018 年 12 月 14 日  </p>
 </blockquote>
 <h3 id="关于本脚本"><a href="#关于本脚本" class="headerlink" title="关于本脚本"></a>关于本脚本</h3><ol>
@@ -504,14 +514,21 @@
 <li>由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。  </li>
 </ol>
 <h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
-<pre><code>wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh  </code></pre><p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。<br>至此，安装完成。</p>
+<pre class="line-numbers language-none"><code class="language-none">wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.sh  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。<br>至此，安装完成。</p>
 <h2 id="验证是否安装成功的方法"><a href="#验证是否安装成功的方法" class="headerlink" title="验证是否安装成功的方法"></a>验证是否安装成功的方法</h2><p>&emsp;&emsp;重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：</p>
-<pre><code>uname -r</code></pre><p>查看内核版本，显示为最新版就表示 OK 了</p>
-<pre><code>sysctl net.ipv4.tcp_available_congestion_control</code></pre><p> 返回值一般为：<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>或者为：<br><code>net.ipv4.tcp_available_congestion_control = reno cubic bbr</code></p>
-<pre><code>sysctl net.ipv4.tcp_congestion_control</code></pre><p>返回值一般为：<br><code>net.ipv4.tcp_congestion_control = bbr</code>  </p>
-<pre><code>sysctl net.core.default_qdisc</code></pre><p>返回值一般为：<br><code>net.core.default_qdisc = fq</code>  </p>
-<pre><code>lsmod | grep bbr</code></pre><p>返回值有 tcp_bbr 模块即说明 bbr 已启动。<strong>注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看内核版本，显示为最新版就表示 OK 了</p>
+<pre class="line-numbers language-none"><code class="language-none">sysctl net.ipv4.tcp_available_congestion_control<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 返回值一般为：<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>或者为：<br><code>net.ipv4.tcp_available_congestion_control = reno cubic bbr</code></p>
+<pre class="line-numbers language-none"><code class="language-none">sysctl net.ipv4.tcp_congestion_control<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>返回值一般为：<br><code>net.ipv4.tcp_congestion_control = bbr</code>  </p>
+<pre class="line-numbers language-none"><code class="language-none">sysctl net.core.default_qdisc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>返回值一般为：<br><code>net.core.default_qdisc = fq</code>  </p>
+<pre class="line-numbers language-none"><code class="language-none">lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>返回值有 tcp_bbr 模块即说明 bbr 已启动。<strong>注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。</strong></p>
 
+                
             </div>
             <hr/>
 
@@ -536,7 +553,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zbmm.vip/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/">https://zbmm.vip/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</a>
+                    <a href="https://fanyc.eu.org/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/">https://fanyc.eu.org/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -733,269 +750,30 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81NDcxMy8zMTE4NA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
-        <style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="vcomments" class="card-content" style="display: grid">
-    </div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'SpRqQmHpVk9b7vkl7IKxRAyV-gzGzoHsz',
-        appKey: 'vY8QWaBksc4AaipUtIED0h9c',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: '骚年，不来一发评论吗？'
-    });
-</script>
 
     
 
@@ -1023,10 +801,6 @@
                     <div class="summary block-with-text">
                         
                             
-首先，贴上Vultr官方的设置方法的地址，英文好的童鞋直接照着操作就行了，毕竟官方嘛，你懂的。  
-
-以下是官方原文:  
-Setup Swap File on LinuxThere will be times where you nee
                         
                     </div>
                     <div class="publish-info">
@@ -1037,7 +811,7 @@ Setup Swap File on LinuxThere will be times where you nee
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/优雅の分享/" class="post-category">
+                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
                                     优雅の分享
                                 </a>
                             
@@ -1076,9 +850,6 @@ Setup Swap File on LinuxThere will be times where you nee
                     <div class="summary block-with-text">
                         
                             
-注意！作者网站 teddysun.com 需要科学上网才能访问  
- 本文转载自：h秋水逸冰 » Shadowsocks 一键安装脚本（四合一）  
-本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存
                         
                     </div>
                     <div class="publish-info">
@@ -1089,7 +860,7 @@ Setup Swap File on LinuxThere will be times where you nee
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/优雅の分享/" class="post-category">
+                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
                                     优雅の分享
                                 </a>
                             
@@ -1134,16 +905,9 @@ Setup Swap File on LinuxThere will be times where you nee
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1298,9 +1062,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2021</span>
+            
             <span id="year">2018</span>
             <a href="/about" target="_blank">VinceNT.范</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1308,7 +1075,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.7k</span>&nbsp;字
+                class="white-color">5.8k</span>&nbsp;字
             
             
             
@@ -1328,50 +1095,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             <br>
             
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2018";
-                    var startMonth = "08";
-                    var startDate = "28";
-                    var startHour = "16";
-                    var startMinute = "08";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            
             <br>
             
         </div>
@@ -1382,7 +1105,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="mailto:moskiller@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:fyc@mail.io" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1399,6 +1122,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </a>
 
 
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=820322511" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 820322511" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
 
 
 
@@ -1433,10 +1160,95 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -1484,6 +1296,7 @@ $(function () {
 
     
 
+	
     
 
     
