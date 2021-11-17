@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zbmm.vip
+url: https://fanyc.eu.org
 root: /
 permalink: :year/:title/
 permalink_defaults: ''
@@ -84,7 +84,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/moskiller/moskiller.github.io.git
+  repo: git@github.com:moskiller/moskiller.github.io.git
   branch: master
 
 # Backup
