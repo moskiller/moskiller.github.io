@@ -50,7 +50,7 @@ git push origin Source
 
 ###三、硬盘损坏、系统重装等本地资料丢失后的动作
 
-当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，**如果你并没有按照操作的话..... 呵呵...
+当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，**如果你并没有按照操作的话..... 呵呵...**
 
 1. 使用命令 `git clone git@github.com:moskiller/moskiller.github.io.git` 拷贝仓库（请将 moskiller 修改为你的用户名）。
 2. 在本地新拷贝的 `你的用户名.github.io` 文件夹下通过终端或者 bash依次执行下列命令就OK了：
@@ -73,7 +73,7 @@ npm install hexo-deployer-git
 ![rejected]  master->master(fetch first)  
 error:failed to push some refs to 'https://github.com/xxx/xxx.git'
 ```
-查了一下google，发现出错的原因是因为我刚才在gitbug网站上手动修改了 CNAME 文件。
+查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。
 解决的办法就是先更新服务器上的变化到本地，然后才能提交。
 
 输入 `git pull`，然后再执行 `git push` 就可以了。
