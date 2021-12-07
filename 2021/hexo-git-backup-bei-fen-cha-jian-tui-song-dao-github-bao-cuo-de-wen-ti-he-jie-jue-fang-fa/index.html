@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何优雅地一键安装最新内核并开启Google BBR, VinceNT.范">
+    <meta name="keywords" content="hexo-git-backup备份插件推送到github报错的问题和解决方法, VinceNT.范">
     <meta name="description" content="安 静 的 美 月半 子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何优雅地一键安装最新内核并开启Google BBR | VinceNT.范&#39;s Blog</title>
+    <title>hexo-git-backup备份插件推送到github报错的问题和解决方法 | VinceNT.范&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何优雅地一键安装最新内核并开启Google BBR</h1>
+                    <h1 class="description center-align post-title">hexo-git-backup备份插件推送到github报错的问题和解决方法</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/VPS/">
-                                <span class="chip bg-color">VPS</span>
+                            <a href="/tags/Github-Hexo/">
+                                <span class="chip bg-color">Github Hexo</span>
                             </a>
                         
                     </div>
@@ -457,28 +457,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-25
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-27
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    597
+                    572
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -501,32 +501,78 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>&emsp;&emsp;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。<br>&emsp;&emsp;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。于是就有大神根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 的脚本。</p>
-<h2 id="适用环境"><a href="#适用环境" class="headerlink" title="适用环境"></a>适用环境</h2><blockquote>
-<p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
-<p> 本文转载自：<a target="_blank" rel="noopener" href="https://teddysun.com/489.html">秋水逸冰 » 一键安装最新内核并开启 BBR 脚本</a>  </p>
-<p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等<br>内存要求：≥128M<br>日期　　：2018 年 12 月 14 日  </p>
+                <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>  原来一直用着的<a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a>备份插件，今天突然出错了，我在执行<code>hexo b</code>后，控制台显示如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
+INFO  Validating config
+INFO  Start backup: git
+[Source 49694d1] Backup My Blog
+
+fatal: &#39;github&#39; does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我的<code>_config.yml</code>配置是这样的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">backup:
+  type: git
+  theme: hexo-theme-matery
+  message: Backup My Blog
+  repository:
+    github: git@github.com:moskiller&#x2F;moskiller.github.io.git,Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="检查过程"><a href="#检查过程" class="headerlink" title="检查过程"></a>检查过程</h2><p>  上网查询无果后，我在<code>node_modules/hexo-git-backup/git.js</code> 文件中加入了一行代码以显示执行的命令 （76-77行之间）<br>即将这个</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">run</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> cp <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>cwd<span class="token operator">:</span> deployDir<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改为：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">run</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> cp <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>cwd<span class="token operator">:</span> deployDir<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后，我再运行 <code>hexo b</code>，出现了以下提示</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  Validating config
+INFO  Start backup: git
+git [ &#39;add&#39;, &#39;-A&#39; ]
+git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
+nothing to commit, working tree clean
+git [ &#39;push&#39;, &#39;-u&#39;, &#39;github&#39;, &#39;master:Source&#39;, &#39;--force&#39; ]
+
+fatal: &#39;github&#39; does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>以上内容里的主要错误信息翻译过来就是：</p>
+<blockquote>
+<p>致命：“origin”不是一个 git 存储库<br>致命：无法读取远程存储库</p>
 </blockquote>
-<h3 id="关于本脚本"><a href="#关于本脚本" class="headerlink" title="关于本脚本"></a>关于本脚本</h3><ol>
-<li>本脚本已在 Vultr 上的 VPS 全部测试通过。  </li>
-<li>当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。  </li>
-<li>脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导, 手动选择内核即可。  </li>
-<li>由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。  </li>
-</ol>
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.sh  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。<br>至此，安装完成。</p>
-<h2 id="验证是否安装成功的方法"><a href="#验证是否安装成功的方法" class="headerlink" title="验证是否安装成功的方法"></a>验证是否安装成功的方法</h2><p>&emsp;&emsp;重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">uname -r<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看内核版本，显示为最新版就表示 OK 了</p>
-<pre class="line-numbers language-none"><code class="language-none">sysctl net.ipv4.tcp_available_congestion_control<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 返回值一般为：<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>或者为：<br><code>net.ipv4.tcp_available_congestion_control = reno cubic bbr</code></p>
-<pre class="line-numbers language-none"><code class="language-none">sysctl net.ipv4.tcp_congestion_control<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>返回值一般为：<br><code>net.ipv4.tcp_congestion_control = bbr</code>  </p>
-<pre class="line-numbers language-none"><code class="language-none">sysctl net.core.default_qdisc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>返回值一般为：<br><code>net.core.default_qdisc = fq</code>  </p>
-<pre class="line-numbers language-none"><code class="language-none">lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>返回值有 tcp_bbr 模块即说明 bbr 已启动。<strong>注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。</strong></p>
+<blockquote>
+<p>请确定你有正确的访问权力，并且 存储库存在 </p>
+</blockquote>
+<p>问题原因找到了！</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>参考网上资料，将<code>node_modules/hexo-git-backup/git.js</code> 的第135行：<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;master:&#39; + repo[t].branch, &#39;--force&#39;]);</code><br>改成<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;Source:&#39; + repo[t].branch, &#39;--force&#39;]);</code></p>
+<p>然后再将<code>_config.yml</code>配置文件中<code>github:</code> 更改为<code>origin:</code></p>
+<p>最后测试结果：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
+INFO  Validating config
+INFO  Start backup: git
+git [ &#39;add&#39;, &#39;-A&#39; ]
+git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
+[Source f59b8df] Backup My Blog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+git [ &#39;push&#39;, &#39;-u&#39;, &#39;origin&#39;, &#39;Source:Source&#39;, &#39;--force&#39; ]
+Enter passphrase for key &#39;&#x2F;Users&#x2F;vincent&#x2F;.ssh&#x2F;id_rsa&#39;: 
+To github.com:moskiller&#x2F;moskiller.github.io.git
+   a7d2cfd..f59b8df  Source -&gt; Source
+Branch &#39;Source&#39; set up to track remote branch &#39;Source&#39; from &#39;origin&#39;.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>问题解决了！</p>
 
                 
             </div>
@@ -553,7 +599,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fanyc.eu.org/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/">https://fanyc.eu.org/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</a>
+                    <a href="https://fanyc.eu.org/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/">https://fanyc.eu.org/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -591,8 +637,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/VPS/">
-                                    <span class="chip bg-color">VPS</span>
+                                <a href="/tags/Github-Hexo/">
+                                    <span class="chip bg-color">Github Hexo</span>
                                 </a>
                             
                         </div>
@@ -784,66 +830,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/">
+                <a href="/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="如何优雅地在Vultr的VPS上添加SWAP交换分区">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="hexo-git-backup备份插件推送到github报错的问题和解决方法">
                         
-                        <span class="card-title">如何优雅地在Vultr的VPS上添加SWAP交换分区</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-02-26
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
-                                    优雅の分享
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/VPS/">
-                        <span class="chip bg-color">VPS</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）">
-                        
-                        <span class="card-title">如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）</span>
+                        <span class="card-title">hexo-git-backup备份插件推送到github报错的问题和解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -854,7 +852,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-02-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                             </span>
                         <span class="publish-author">
                             
@@ -868,11 +866,61 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/VPS/">
-                        <span class="chip bg-color">VPS</span>
+                    <a href="/tags/Github-Hexo/">
+                        <span class="chip bg-color">Github Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/gei-bo-ke-bei-an-la-sui-ran-shi-meng-zhan-de-na-chong-bei-an/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="给博客备案啦，虽然是萌站的那种备案">
+                        
+                        <span class="card-title">给博客备案啦，虽然是萌站的那种备案</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    心情の随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%83%E6%83%85/">
+                        <span class="chip bg-color">心情</span>
                     </a>
                     
                 </div>

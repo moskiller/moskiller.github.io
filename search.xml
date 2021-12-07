@@ -27,6 +27,89 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo-git-backup备份插件推送到github报错的问题和解决方法</title>
+    <url>/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>  原来一直用着的<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a>备份插件，今天突然出错了，我在执行<code>hexo b</code>后，控制台显示如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
+INFO  Validating config
+INFO  Start backup: git
+[Source 49694d1] Backup My Blog
+
+fatal: &#39;github&#39; does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我的<code>_config.yml</code>配置是这样的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">backup:
+  type: git
+  theme: hexo-theme-matery
+  message: Backup My Blog
+  repository:
+    github: git@github.com:moskiller&#x2F;moskiller.github.io.git,Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="检查过程"><a href="#检查过程" class="headerlink" title="检查过程"></a>检查过程</h2><p>  上网查询无果后，我在<code>node_modules/hexo-git-backup/git.js</code> 文件中加入了一行代码以显示执行的命令 （76-77行之间）<br>即将这个</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">run</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> cp <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>cwd<span class="token operator">:</span> deployDir<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改为：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">run</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> cp <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> args<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>cwd<span class="token operator">:</span> deployDir<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后，我再运行 <code>hexo b</code>，出现了以下提示</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  Validating config
+INFO  Start backup: git
+git [ &#39;add&#39;, &#39;-A&#39; ]
+git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
+nothing to commit, working tree clean
+git [ &#39;push&#39;, &#39;-u&#39;, &#39;github&#39;, &#39;master:Source&#39;, &#39;--force&#39; ]
+
+fatal: &#39;github&#39; does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>以上内容里的主要错误信息翻译过来就是：</p>
+<blockquote>
+<p>致命：“origin”不是一个 git 存储库<br>致命：无法读取远程存储库</p>
+</blockquote>
+<blockquote>
+<p>请确定你有正确的访问权力，并且 存储库存在 </p>
+</blockquote>
+<p>问题原因找到了！</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>参考网上资料，将<code>node_modules/hexo-git-backup/git.js</code> 的第135行：<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;master:&#39; + repo[t].branch, &#39;--force&#39;]);</code><br>改成<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;Source:&#39; + repo[t].branch, &#39;--force&#39;]);</code></p>
+<p>然后再将<code>_config.yml</code>配置文件中<code>github:</code> 更改为<code>origin:</code></p>
+<p>最后测试结果：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
+INFO  Validating config
+INFO  Start backup: git
+git [ &#39;add&#39;, &#39;-A&#39; ]
+git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
+[Source f59b8df] Backup My Blog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+git [ &#39;push&#39;, &#39;-u&#39;, &#39;origin&#39;, &#39;Source:Source&#39;, &#39;--force&#39; ]
+Enter passphrase for key &#39;&#x2F;Users&#x2F;vincent&#x2F;.ssh&#x2F;id_rsa&#39;: 
+To github.com:moskiller&#x2F;moskiller.github.io.git
+   a7d2cfd..f59b8df  Source -&gt; Source
+Branch &#39;Source&#39; set up to track remote branch &#39;Source&#39; from &#39;origin&#39;.
+INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>问题解决了！</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「你快乐，所以我快乐」</title>
     <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
     <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
@@ -38,50 +121,6 @@
 <p>因为有时是别无选择的结果，</p>
 <p>做着不喜欢的工作赚着微薄的薪水。</p>
 <p>洗洗睡吧，梦里啥都有！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>　换手机了</title>
-    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
-    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
-<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>又是一年春运时</title>
-    <url>/2020/you-shi-yi-nian-chun-yun-shi/</url>
-    <content><![CDATA[<p>又是一年将尽时，</p>
-<p>一岁年轮一岁心。</p>
-<p>漫漫红尘走一回，</p>
-<p>多少寻觅皆成空。</p>
-<p>聚散依依几多情愁，</p>
-<p>月缺月盈几多悲喜。</p>
-<p>感谢时光中的每一次遇见，</p>
-<p>因为陪伴，岁月更加温暖。</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>又一次船新启航...</title>
-    <url>/2019/you-yi-ci-chuan-xin-qi-hang/</url>
-    <content><![CDATA[<h1 id="又一次船新启航……"><a href="#又一次船新启航……" class="headerlink" title="又一次船新启航……"></a>又一次船新启航……</h1><p>  <del>大家好，我是渣渣辉……..</del>　大家好，我终于回来了，经过几个月的冼脑式学习，我觉得我越来越Low了，谢谢！</p>
 ]]></content>
       <categories>
         <category>心情の随笔</category>
@@ -192,6 +231,50 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
+    <title>　换手机了</title>
+    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
+    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
+<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又一次船新启航...</title>
+    <url>/2019/you-yi-ci-chuan-xin-qi-hang/</url>
+    <content><![CDATA[<h1 id="又一次船新启航……"><a href="#又一次船新启航……" class="headerlink" title="又一次船新启航……"></a>又一次船新启航……</h1><p>  <del>大家好，我是渣渣辉……..</del>　大家好，我终于回来了，经过几个月的冼脑式学习，我觉得我越来越Low了，谢谢！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又是一年春运时</title>
+    <url>/2020/you-shi-yi-nian-chun-yun-shi/</url>
+    <content><![CDATA[<p>又是一年将尽时，</p>
+<p>一岁年轮一岁心。</p>
+<p>漫漫红尘走一回，</p>
+<p>多少寻觅皆成空。</p>
+<p>聚散依依几多情愁，</p>
+<p>月缺月盈几多悲喜。</p>
+<p>感谢时光中的每一次遇见，</p>
+<p>因为陪伴，岁月更加温暖。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>好像很忙的样子</title>
     <url>/2019/hao-xiang-hen-mang-de-yang-zi/</url>
     <content><![CDATA[<p>&emsp;这段时间好像很忙，又好像没什么忙，时间被碾得如此之碎，一阵风吹过后全都不知去向了。以至于在我试图回想这一年到底干了些什么的时候，发现自己简直就像是从一场昏迷中醒过来一样。</p>
@@ -238,6 +321,67 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </categories>
       <tags>
         <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地保存你在Github上的Hexo源代码</title>
+    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
+    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
+<hr>
+<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
+<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
+</li>
+<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
+</li>
+<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
+</li>
+<li><p>使用git clone <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+</li>
+<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+</li>
+<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
+hexo init
+npm install
+npm install hexo-deployer-git（此时当前分支应显示为 Source ）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
+</li>
+<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
+</li>
+</ol>
+<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
+<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
+</li>
+<li><p>首先在终端里依次执行:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git add .
+git commit -m “…”
+git push origin Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
+</li>
+</ol>
+<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
+<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
+<ol>
+<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
+<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
+npm install
+npm install hexo-deployer-git 
+
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">![rejected]  master-&gt;master(fetch first)  
+error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2F;xxx.git&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
+<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -293,67 +437,6 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </categories>
       <tags>
         <tag>优雅人生</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何优雅地保存你在Github上的Hexo源代码</title>
-    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
-    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
-<hr>
-<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
-<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
-</li>
-<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
-</li>
-<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
-</li>
-<li><p>使用git clone <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
-</li>
-<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
-</li>
-<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
-hexo init
-npm install
-npm install hexo-deployer-git（此时当前分支应显示为 Source ）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
-</li>
-<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
-</li>
-</ol>
-<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
-<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
-</li>
-<li><p>首先在终端里依次执行:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git add .
-git commit -m “…”
-git push origin Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
-</li>
-</ol>
-<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
-<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
-<ol>
-<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
-<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
-npm install
-npm install hexo-deployer-git 
-
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">![rejected]  master-&gt;master(fetch first)  
-error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2F;xxx.git&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
-<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
-]]></content>
-      <categories>
-        <category>优雅の分享</category>
-      </categories>
-      <tags>
-        <tag>Github Hexo</tag>
       </tags>
   </entry>
   <entry>
