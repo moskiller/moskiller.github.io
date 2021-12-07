@@ -93,7 +93,7 @@ backup:
     theme: hexo-theme-matery
     message: Backup My Blog
     repository:
-      github: git@github.com:moskiller/moskiller.github.io.git,Source
+      origin: git@github.com:moskiller/moskiller.github.io.git,Source
 
 # hexo-symbols-count-time
 ## https://github.com/theme-next/hexo-symbols-count-time
