@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="给博客备案啦，虽然是萌站的那种备案, VinceNT.范">
+    <meta name="keywords" content="安装Warp，将你的VPS变成IPV4/IPV6双栈VPS, VinceNT.范">
     <meta name="description" content="安 静 的 美 月半 子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>给博客备案啦，虽然是萌站的那种备案 | VinceNT.范&#39;s Blog</title>
+    <title>安装Warp，将你的VPS变成IPV4/IPV6双栈VPS | VinceNT.范&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">给博客备案啦，虽然是萌站的那种备案</h1>
+                    <h1 class="description center-align post-title">安装Warp，将你的VPS变成IPV4/IPV6双栈VPS</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BF%83%E6%83%85/">
-                                <span class="chip bg-color">心情</span>
+                            <a href="/tags/VPS/">
+                                <span class="chip bg-color">VPS</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/" class="post-category">
-                                心情の随笔
+                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
+                                优雅の分享
                             </a>
                         
                     </div>
@@ -457,21 +457,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-02
+                    2021-12-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-02
+                    2021-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    35
+                    403
                 </div>
                 
 
@@ -501,8 +501,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>今天，我怀着亿点点激动的心情宣布，这个小博客网站，已经正式成为萌站的一份子了！！！</p>
-<p><img src="https://i.loli.net/2021/12/02/Is6TeFoL9PUCjp3.png" alt="截屏2021-12-02 18.09.38.png"></p>
+                <p>  在VPS套上WARP后，可以令你的单线纯ipv4或者纯ipv6的VPS变成ipv4/ipv6双杀的双栈VPS！换句简单的话来说，就是原来只能访问IPV6或者IPV4资源的VPS，在安装了Warp之后，就能同时访问IPV4和IPV6的网络资源！</p>
+<p>  P.S. 如果您的VPS是OpenVZ的VPS，请自行在服务商的控制面板开启TUN模块后使用脚本开启Warp。</p>
+<h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><ul>
+<li>VPS 一台</li>
+</ul>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><p>本文基于Euserv VPS的Debian11系统的部署环境，如您的系统不是Debian 11的建议自行上网另找方法。</p>
+<ol>
+<li><p>SSH登录VPS</p>
+</li>
+<li><p>复制、粘贴并运行以下代码<br><code>wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</code></p>
+</li>
+<li><p>选择1或2选项</p>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/HrtZvJ1cwyYSKmI.png"></p>
+<ol start="4">
+<li>输入Warp+的key，如没有按Enter键跳过，使用免费账号 (CloudFlare Warp+和免费账号的速度都差不多，没什么区别)</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/LR5vTi6DzOdACfx.png"></p>
+<ol start="5">
+<li>选择内核方案（按照脚本作者的介绍，BoringTun &gt; Wireguard-GO）</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/JirjzBFXNhmaQAe.png"></p>
+<ol start="6">
+<li>等待安装依赖<br><img src="https://s2.loli.net/2021/12/10/kMSKw4Z7pGrT9hA.png"></li>
+</ol>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
+<li><p>脚本提示获取WARP IP 失败？<br> 请重新运行脚本安装，OpenVZ的机器请检查自己的TUN模块是否开启</p>
+</li>
+<li><p>为什么warp的ip地区和vps的地区不一样<br> CloudFlare的一些玄学问题吧，具体不清楚</p>
+</li>
+<li><p>为何我无法启用WARP？<br> 有可能你使用的是OpenVZ的VPS，请在其服务商官网打开TUN之后输入命令： <code>cat /dev/net/tun</code> 查看TUN模块是否启用。</p>
+</li>
+</ol>
+<p>返回结果： <code>cat: /dev/net/tun:  File descriptor in bad state</code>  即代表已经开启TUN模块</p>
+<p>返回结果：<code>cat: /dev/net/tun:  Operation not permitted</code>  即代表TUN模块未开启</p>
 
                 
             </div>
@@ -529,7 +563,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fanyc.eu.org/2021/gei-bo-ke-bei-an-la-sui-ran-shi-meng-zhan-de-na-chong-bei-an/">https://fanyc.eu.org/2021/gei-bo-ke-bei-an-la-sui-ran-shi-meng-zhan-de-na-chong-bei-an/</a>
+                    <a href="https://fanyc.eu.org/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/">https://fanyc.eu.org/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +601,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BF%83%E6%83%85/">
-                                    <span class="chip bg-color">心情</span>
+                                <a href="/tags/VPS/">
+                                    <span class="chip bg-color">VPS</span>
                                 </a>
                             
                         </div>
@@ -760,9 +794,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="安装Warp，将你的VPS变成IPV4/IPV6双栈VPS">
+                        
+                        <span class="card-title">安装Warp，将你的VPS变成IPV4/IPV6双栈VPS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
+                                    优雅の分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VPS/">
+                        <span class="chip bg-color">VPS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/">
                     <div class="card-image">
@@ -780,9 +865,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -800,55 +885,6 @@
                     
                     <a href="/tags/Github-Hexo/">
                         <span class="chip bg-color">Github Hexo</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/ru-he-you-ya-di-hua-shui/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="如何优雅地划水">
-                        
-                        <span class="card-title">如何优雅地划水</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BC%98%E9%9B%85%E3%81%AE%E5%88%86%E4%BA%AB/" class="post-category">
-                                    优雅の分享
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%BC%98%E9%9B%85%E4%BA%BA%E7%94%9F/">
-                        <span class="chip bg-color">优雅人生</span>
                     </a>
                     
                 </div>
