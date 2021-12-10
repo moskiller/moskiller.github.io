@@ -132,6 +132,6 @@ permalink_pinyin:
 ## https://github.com/ele828/hexo-prism-plugin
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
+  theme: 'vs'
   line_number: false    # default false
   custom_css:
