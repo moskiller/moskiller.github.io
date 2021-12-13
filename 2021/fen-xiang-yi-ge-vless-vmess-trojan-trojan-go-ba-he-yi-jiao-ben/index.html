@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何优雅地保存你在Github上的Hexo源代码, VinceNT.范">
+    <meta name="keywords" content="分享一个VLESS VMess Trojan Trojan-Go 八合一脚本, VinceNT.范">
     <meta name="description" content="安 静 的 美 月半 子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何优雅地保存你在Github上的Hexo源代码 | VinceNT.范&#39;s Blog</title>
+    <title>分享一个VLESS VMess Trojan Trojan-Go 八合一脚本 | VinceNT.范&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何优雅地保存你在Github上的Hexo源代码</h1>
+                    <h1 class="description center-align post-title">分享一个VLESS VMess Trojan Trojan-Go 八合一脚本</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Github-Hexo/">
-                                <span class="chip bg-color">Github Hexo</span>
+                            <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                <span class="chip bg-color">脚本</span>
                             </a>
                         
                     </div>
@@ -457,28 +457,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-29
+                    2021-12-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-02
+                    2021-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    983
+                    176
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -501,56 +501,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
-<hr>
-<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
-<li><p>这里我假定你已经注册了<a target="_blank" rel="noopener" href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a target="_blank" rel="noopener" href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
-</li>
-<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
-</li>
-<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
-</li>
-<li><p>使用git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
-</li>
-<li><p>安装 Hexo 前，请先确认你是否已安装<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> 和 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
-</li>
-<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
-hexo init
-npm install
-npm install hexo-deployer-git（此时当前分支应显示为 Source ）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
-</li>
-<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
-</li>
-</ol>
-<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
-<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
-</li>
-<li><p>首先在终端里依次执行:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git add .
-git commit -m “…”
-git push origin Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
-</li>
-</ol>
-<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
-<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
-<ol>
-<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
-<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g hexo-cli
-npm install
-npm install hexo-deployer-git 
-
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">![rejected]  master-&gt;master(fetch first)  
-error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2F;xxx.git&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
-<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
+                <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/mack-a/v2ray-agent">Github/mack-a</a><br>使用指南：<a target="_blank" rel="noopener" href="https://github.com/mack-a/v2ray-agent/blob/master/documents/how_to_use.md">How To Use</a></p>
+<h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><p>  在你的VPS终端中输入：<br>  <code>wget -P /root -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</code></p>
+<h3 id="支持的安装类型"><a href="#支持的安装类型" class="headerlink" title="支持的安装类型"></a>支持的安装类型</h3><p>  VLESS+TCP+TLS<br>  VLESS+TCP+xtls-rprx-direct【推荐】<br>  VLESS+gRPC+TLS【支持CDN、IPv6、延迟低】<br>  VLESS+WS+TLS【支持CDN、IPv6】<br>  Trojan+TCP+TLS【推荐】<br>  Trojan+TCP+xtls-rprx-direct【推荐】<br>  Trojan+gRPC+TLS【支持CDN、IPv6、延迟低】<br>  VMess+WS+TLS【支持CDN、IPv6】</p>
+<h3 id="组合推荐"><a href="#组合推荐" class="headerlink" title="组合推荐"></a>组合推荐</h3><p>  中转/gia —&gt; VLESS+TCP+TLS/XTLS、Trojan【推荐使用XTLS的xtls-rprx-direct】<br>  移动宽带 —&gt; VMESS+WS+TLS/VLESS+WS+TLS/VLESS+gRPC+TLS/Trojan+gRPC+TLS + Cloudflare<br>  cloudflare-&gt; VLESS+gRPC+TLS/Trojan+gRPC+TLS[多路复用、延迟低]</p>
 
                 
             </div>
@@ -577,7 +531,7 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fanyc.eu.org/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/">https://fanyc.eu.org/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</a>
+                    <a href="https://fanyc.eu.org/2021/fen-xiang-yi-ge-vless-vmess-trojan-trojan-go-ba-he-yi-jiao-ben/">https://fanyc.eu.org/2021/fen-xiang-yi-ge-vless-vmess-trojan-trojan-go-ba-he-yi-jiao-ben/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,8 +569,8 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Github-Hexo/">
-                                    <span class="chip bg-color">Github Hexo</span>
+                                <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                                    <span class="chip bg-color">脚本</span>
                                 </a>
                             
                         </div>
@@ -808,17 +762,18 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/">
+                <a href="/2021/fen-xiang-yi-ge-vless-vmess-trojan-trojan-go-ba-he-yi-jiao-ben/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="修复DSDT时常用错误的处理办法">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="分享一个VLESS VMess Trojan Trojan-Go 八合一脚本">
                         
-                        <span class="card-title">修复DSDT时常用错误的处理办法</span>
+                        <span class="card-title">分享一个VLESS VMess Trojan Trojan-Go 八合一脚本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -828,9 +783,9 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -843,11 +798,12 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DSDT-%E9%BB%91%E8%8B%B9%E6%9E%9C/">
-                        <span class="chip bg-color">DSDT 黑苹果</span>
+                    <a href="/tags/%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">脚本</span>
                     </a>
                     
                 </div>
@@ -861,13 +817,13 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/you-yi-ci-chuan-xin-qi-hang/">
+                <a href="/2021/zi-jian-ti-zi-shi-xian-hu-lian-wang-shang-de-zi-you-liu-lan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="又一次船新启航...">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="自建梯子，实现互联网上的自由浏览">
                         
-                        <span class="card-title">又一次船新启航...</span>
+                        <span class="card-title">自建梯子，实现互联网上的自由浏览</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,27 +834,15 @@ error:failed to push some refs to &#39;https:&#x2F;&#x2F;github.com&#x2F;xxx&#x2
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%BF%83%E6%83%85%E3%81%AE%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    心情の随笔
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            VinceNT.范
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%BF%83%E6%83%85/">
-                        <span class="chip bg-color">心情</span>
-                    </a>
-                    
                 </div>
                 
             </div>
