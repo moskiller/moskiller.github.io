@@ -42,31 +42,6 @@
   </entry>
   
   <entry>
-    <title>自建梯子，实现互联网上的自由浏览</title>
-    <link href="https://fanyc.eu.org/2021/zi-jian-ti-zi-shi-xian-hu-lian-wang-shang-de-zi-you-liu-lan/"/>
-    <id>https://fanyc.eu.org/2021/zi-jian-ti-zi-shi-xian-hu-lian-wang-shang-de-zi-you-liu-lan/</id>
-    <published>2021-12-10T08:08:04.000Z</published>
-    <updated>2021-12-10T09:19:06.104Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;准备材料&quot;&gt;&lt;a href=&quot;#准备材料&quot; class=&quot;headerlink&quot; title=&quot;准备材料&quot;&gt;&lt;/a&gt;准备材料&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;VPS一台&lt;/li&gt;
-&lt;li&gt;域名一枚&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;部署方法&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>安装Warp，将你的VPS变成IPV4/IPV6双栈VPS</title>
     <link href="https://fanyc.eu.org/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/"/>
     <id>https://fanyc.eu.org/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/</id>
@@ -432,6 +407,25 @@
     
     
     <category term="2019" scheme="https://fanyc.eu.org/tags/2019/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年第一篇博文</title>
+    <link href="https://fanyc.eu.org/2019/2019-nian-di-yi-pian-bo-wen/"/>
+    <id>https://fanyc.eu.org/2019/2019-nian-di-yi-pian-bo-wen/</id>
+    <published>2019-01-30T04:00:40.000Z</published>
+    <updated>2020-09-27T09:09:24.681Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;电脑硬盘挂了&quot;&gt;&lt;a href=&quot;#电脑硬盘挂了&quot; class=&quot;headerlink&quot; title=&quot;电脑硬盘挂了&quot;&gt;&lt;/a&gt;电脑硬盘挂了&lt;/h2&gt;&lt;p&gt;所有文件都没了。包括Hexo的配置和博文。。。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="建博の笔记" scheme="https://fanyc.eu.org/categories/%E5%BB%BA%E5%8D%9A%E3%81%AE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Hexo" scheme="https://fanyc.eu.org/tags/Hexo/"/>
     
   </entry>
   
