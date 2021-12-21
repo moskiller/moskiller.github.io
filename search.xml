@@ -110,26 +110,6 @@ INFO  Backup done: <span class="token function">git</span><span aria-hidden="tru
       </tags>
   </entry>
   <entry>
-    <title>「你快乐，所以我快乐」</title>
-    <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
-    <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
-<p>那我的快乐如何达成？</p>
-<p>在有限的金钱和能力的情况下，</p>
-<p>需要牺牲下自身的快乐来源，</p>
-<p>首先满足「你快乐」。</p>
-<p>但终归可能不是我真正的快乐，</p>
-<p>因为有时是别无选择的结果，</p>
-<p>做着不喜欢的工作赚着微薄的薪水。</p>
-<p>洗洗睡吧，梦里啥都有！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复DSDT时常用错误的处理办法</title>
     <url>/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    对于Hackinto电脑来说，正确的clover、config.plist和kext只能确保大部分电脑可以正常安装MacOS，但并不一定能保证能正常使用。在启动时，电脑会去读取ACPI的配置，不当的DSDT和SSDT有可能会导致出现系统启动失败、无法休眠、电池电量无法显示等很多奇奇怪怪的问题。很多人都知道使用DSDT补丁可以开双核，但DSDT的功能不仅仅如此，还可以<strong>修复</strong>显卡、声卡、网卡、电池、休眠等问题。<br>​<br>​<br><strong>DSDT只是描述你硬件的文件，并不是驱动文件，它只是告诉你的MacOS系统，你的主板上都有些什么硬件，如果你的MacOS并不支持这种硬件，那么DSDT也无法驱动你的这个硬件！！！</strong><br>​<br>​<br>这里是你在MacOS中修复DSDT时需要用到的软件：<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a> (RehabMan 2018-0507版)</p>
@@ -231,6 +211,26 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
+    <title>「你快乐，所以我快乐」</title>
+    <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
+    <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
+<p>那我的快乐如何达成？</p>
+<p>在有限的金钱和能力的情况下，</p>
+<p>需要牺牲下自身的快乐来源，</p>
+<p>首先满足「你快乐」。</p>
+<p>但终归可能不是我真正的快乐，</p>
+<p>因为有时是别无选择的结果，</p>
+<p>做着不喜欢的工作赚着微薄的薪水。</p>
+<p>洗洗睡吧，梦里啥都有！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分享一个VLESS VMess Trojan Trojan-Go 八合一脚本</title>
     <url>/2021/fen-xiang-yi-ge-vless-vmess-trojan-trojan-go-ba-he-yi-jiao-ben/</url>
     <content><![CDATA[<p>项目地址：<a href="https://github.com/mack-a/v2ray-agent">Github/mack-a</a><br>使用指南：<a href="https://github.com/mack-a/v2ray-agent/blob/master/documents/how_to_use.md">How To Use</a></p>
@@ -258,19 +258,6 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
-    <title>　换手机了</title>
-    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
-    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
-<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>又是一年春运时</title>
     <url>/2020/you-shi-yi-nian-chun-yun-shi/</url>
     <content><![CDATA[<p>又是一年将尽时，</p>
@@ -281,6 +268,19 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
 <p>月缺月盈几多悲喜。</p>
 <p>感谢时光中的每一次遇见，</p>
 <p>因为陪伴，岁月更加温暖。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>　换手机了</title>
+    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
+    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
+<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
 ]]></content>
       <categories>
         <category>心情の随笔</category>
@@ -327,6 +327,18 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
+    <title>好像很忙的样子</title>
+    <url>/2019/hao-xiang-hen-mang-de-yang-zi/</url>
+    <content><![CDATA[<p>&emsp;这段时间好像很忙，又好像没什么忙，时间被碾得如此之碎，一阵风吹过后全都不知去向了。以至于在我试图回想这一年到底干了些什么的时候，发现自己简直就像是从一场昏迷中醒过来一样。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何优雅地保存你在Github上的Hexo源代码</title>
     <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
     <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
@@ -338,7 +350,7 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
 </li>
 <li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
 </li>
-<li><p>使用git clone <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+<li><p>使用git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
 </li>
 <li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
 </li>
@@ -385,18 +397,6 @@ error:failed to push some refs to <span class="token string">'https://github.com
       </categories>
       <tags>
         <tag>Github Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>好像很忙的样子</title>
-    <url>/2019/hao-xiang-hen-mang-de-yang-zi/</url>
-    <content><![CDATA[<p>&emsp;这段时间好像很忙，又好像没什么忙，时间被碾得如此之碎，一阵风吹过后全都不知去向了。以至于在我试图回想这一年到底干了些什么的时候，发现自己简直就像是从一场昏迷中醒过来一样。</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
       </tags>
   </entry>
   <entry>
@@ -521,114 +521,6 @@ Swap:         2047          0       2047<span aria-hidden="true" class="line-num
 <li>使用&emsp;<code>swapon /swapfile</code> &emsp;命令来激活SWAP文件。</li>
 <li>如果你要VPS主机重启的时候可以自动挂载Swap ，那么还需要修改fstab配置文件，用Vim或者Nano打开/etc/fstab文件，比如你使用的是nano，那么命令如下：&emsp; <code>nano /etc/fstab</code>，&emsp;然后在打开的文件最后面添加这一行字：&emsp; <code>/swapfile   none    swap    sw    0   0</code> &emsp; ，保存并关闭文件后，整个世界安静了！！！</li>
 </ol>
-]]></content>
-      <categories>
-        <category>优雅の分享</category>
-      </categories>
-      <tags>
-        <tag>VPS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）</title>
-    <url>/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/</url>
-    <content><![CDATA[<blockquote>
-<p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
-<p> 本文转载自：<a href="https://teddysun.com/486.html">h秋水逸冰 » Shadowsocks 一键安装脚本（四合一）</a>  </p>
-<p>本脚本适用环境<br>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日  </p>
-</blockquote>
-<h2 id="关于脚本"><a href="#关于脚本" class="headerlink" title="关于脚本"></a>关于脚本</h2><ol>
-<li>一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；</li>
-<li>各版本的启动脚本及配置文件名不再重合；</li>
-<li>每次运行可安装一种版本；</li>
-<li>支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；</li>
-<li>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）；</li>
-<li>友情提示：如果你有问题，请先阅读这篇<a href="https://teddysun.com/399.html">《Shadowsocks Troubleshooting》</a>之后再询问。</li>
-</ol>
-<h4 id="脚本的默认配置"><a href="#脚本的默认配置" class="headerlink" title="脚本的默认配置"></a>脚本的默认配置</h4><ul>
-<li>服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）</li>
-<li>密码：自己设定（如不设定，默认为 teddysun.com）</li>
-<li>加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）</li>
-<li>协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）</li>
-<li>混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）</li>
-<li>备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。</li>
-</ul>
-<h4 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h4><ul>
-<li><p>常规版 Windows 客户端<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
-</li>
-<li><p>ShadowsocksR 版 Windows 客户端<br><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
-</li>
-</ul>
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">wget --no-check-certificate -O shadowsocks-all.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks-all.sh  
-
-chmod +x shadowsocks-all.sh  
-
-.&#x2F;shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>安装完成后，脚本提示如下</p>
-<pre class="line-numbers language-none"><code class="language-none">Congratulations, your_shadowsocks_version install completed!
-Your Server IP        :your_server_ip
-Your Server Port      :your_server_port
-Your Password         :your_password
-Your Encryption Method:your_encryption_method
-
-Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)
- ss:&#x2F;&#x2F;your_encryption_method:your_password@your_server_ip:your_server_port
-Your QR Code has been saved as a PNG file path:
- your_path.png
-
-Welcome to visit:https:&#x2F;&#x2F;teddysun.com&#x2F;486.html
-Enjoy it!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>到此安装完成，就是这样简单，现在，拿出您的小火箭，Go Go Go!  </p>
-<h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
-<p>使用root用户登录，运行以下命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;shadowsocks-all.sh uninstall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
-<pre class="line-numbers language-none"><code class="language-none">Shadowsocks-Python 版：
-&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-python start | stop | restart | status
-  
-ShadowsocksR 版：
-&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-r start | stop | restart | status
-  
-Shadowsocks-Go 版：
-&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-go start | stop | restart | status
-  
-Shadowsocks-libev 版：
-&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-libev start | stop | restart | status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="各版本默认配置文件"><a href="#各版本默认配置文件" class="headerlink" title="各版本默认配置文件"></a>各版本默认配置文件</h3><pre class="line-numbers language-none"><code class="language-none">Shadowsocks-Python 版：
-&#x2F;etc&#x2F;shadowsocks-python&#x2F;config.json
-  
-ShadowsocksR 版：
-&#x2F;etc&#x2F;shadowsocks-r&#x2F;config.json
-  
-Shadowsocks-Go 版：
-&#x2F;etc&#x2F;shadowsocks-go&#x2F;config.json
-  
-Shadowsocks-libev 版：
-&#x2F;etc&#x2F;shadowsocks-libev&#x2F;config.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><ul>
-<li><p>2019 年 01 月 11 日：<br>1、升级：libsodium 到最新版本 1.0.17；<br>2、升级：mbedtls 到最新版本 2.16.0；  </p>
-</li>
-<li><p>2018 年 11 月 05 日：<br>1、升级：使用 Github 上最新代码编译出 Go 版二进制可执行文件，版本号 1.2.2。  </p>
-</li>
-<li><p>2018 年 06 月 01 日：<br>1、修正：在启用了插件 simple-obfs 的情况下，libev 版启动失败的问题；<br>2、修正：在使用 /etc/init.d/shadowsocks-libev restart 命令重启 libev 版服务端时，偶尔出现的 “bind: Address already in use” 问题；<br>3、修正：移除 libev 版配置文件中的 local_address 字段；<br>4、修改：不再默认使用 root 用户启动，改为使用 nobody 用户启动 libev 版服务端 ss-server；<br>5、升级：mbedtls 到版本 2.9.0；<br>6、修改：libev 版启动脚本中的 -u 参数（即同时启用 TCP 和 UDP 模式），改到配置文件里配置为 “mode”: “tcp_and_udp”；<br>7、修改：libev 版配置文件的内置 NameServers 为 8.8.8.8，默认是从 /etc/resolv.conf 中取得。  </p>
-</li>
-<li><p>以下省略……</p>
-</li>
-</ul>
-<h2 id="更多单版本-Shadowsocks-服务端一键安装脚本"><a href="#更多单版本-Shadowsocks-服务端一键安装脚本" class="headerlink" title="更多单版本 Shadowsocks 服务端一键安装脚本"></a>更多单版本 Shadowsocks 服务端一键安装脚本</h2><ul>
-<li><a href="https://teddysun.com/342.html">Shadowsocks Python 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
-<li><a href="https://shadowsocks.be/9.html">ShadowsocksR 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
-<li><a href="https://teddysun.com/357.html">CentOS 下 Shadowsocks-libev 一键安装脚本</a>  </li>
-<li><a href="https://teddysun.com/358.html">Debian 下 Shadowsocks-libev 一键安装脚本</a>  </li>
-<li><a href="https://teddysun.com/392.html">Shadowsocks-go 一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
-</ul>
-<p><strong>注意：以上单版本不可与该四合一版本混用。</strong></p>
 ]]></content>
       <categories>
         <category>优雅の分享</category>
@@ -846,6 +738,114 @@ yum update<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
       </categories>
       <tags>
         <tag>网站分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）</title>
+    <url>/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
+<p> 本文转载自：<a href="https://teddysun.com/486.html">h秋水逸冰 » Shadowsocks 一键安装脚本（四合一）</a>  </p>
+<p>本脚本适用环境<br>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日  </p>
+</blockquote>
+<h2 id="关于脚本"><a href="#关于脚本" class="headerlink" title="关于脚本"></a>关于脚本</h2><ol>
+<li>一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；</li>
+<li>各版本的启动脚本及配置文件名不再重合；</li>
+<li>每次运行可安装一种版本；</li>
+<li>支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；</li>
+<li>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）；</li>
+<li>友情提示：如果你有问题，请先阅读这篇<a href="https://teddysun.com/399.html">《Shadowsocks Troubleshooting》</a>之后再询问。</li>
+</ol>
+<h4 id="脚本的默认配置"><a href="#脚本的默认配置" class="headerlink" title="脚本的默认配置"></a>脚本的默认配置</h4><ul>
+<li>服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）</li>
+<li>密码：自己设定（如不设定，默认为 teddysun.com）</li>
+<li>加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）</li>
+<li>协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）</li>
+<li>混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）</li>
+<li>备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。</li>
+</ul>
+<h4 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h4><ul>
+<li><p>常规版 Windows 客户端<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+</li>
+<li><p>ShadowsocksR 版 Windows 客户端<br><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+</li>
+</ul>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">wget --no-check-certificate -O shadowsocks-all.sh https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocks-all.sh  
+
+chmod +x shadowsocks-all.sh  
+
+.&#x2F;shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>安装完成后，脚本提示如下</p>
+<pre class="line-numbers language-none"><code class="language-none">Congratulations, your_shadowsocks_version install completed!
+Your Server IP        :your_server_ip
+Your Server Port      :your_server_port
+Your Password         :your_password
+Your Encryption Method:your_encryption_method
+
+Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)
+ ss:&#x2F;&#x2F;your_encryption_method:your_password@your_server_ip:your_server_port
+Your QR Code has been saved as a PNG file path:
+ your_path.png
+
+Welcome to visit:https:&#x2F;&#x2F;teddysun.com&#x2F;486.html
+Enjoy it!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>到此安装完成，就是这样简单，现在，拿出您的小火箭，Go Go Go!  </p>
+<h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
+<p>使用root用户登录，运行以下命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;shadowsocks-all.sh uninstall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
+<pre class="line-numbers language-none"><code class="language-none">Shadowsocks-Python 版：
+&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-python start | stop | restart | status
+  
+ShadowsocksR 版：
+&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-r start | stop | restart | status
+  
+Shadowsocks-Go 版：
+&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-go start | stop | restart | status
+  
+Shadowsocks-libev 版：
+&#x2F;etc&#x2F;init.d&#x2F;shadowsocks-libev start | stop | restart | status<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="各版本默认配置文件"><a href="#各版本默认配置文件" class="headerlink" title="各版本默认配置文件"></a>各版本默认配置文件</h3><pre class="line-numbers language-none"><code class="language-none">Shadowsocks-Python 版：
+&#x2F;etc&#x2F;shadowsocks-python&#x2F;config.json
+  
+ShadowsocksR 版：
+&#x2F;etc&#x2F;shadowsocks-r&#x2F;config.json
+  
+Shadowsocks-Go 版：
+&#x2F;etc&#x2F;shadowsocks-go&#x2F;config.json
+  
+Shadowsocks-libev 版：
+&#x2F;etc&#x2F;shadowsocks-libev&#x2F;config.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><ul>
+<li><p>2019 年 01 月 11 日：<br>1、升级：libsodium 到最新版本 1.0.17；<br>2、升级：mbedtls 到最新版本 2.16.0；  </p>
+</li>
+<li><p>2018 年 11 月 05 日：<br>1、升级：使用 Github 上最新代码编译出 Go 版二进制可执行文件，版本号 1.2.2。  </p>
+</li>
+<li><p>2018 年 06 月 01 日：<br>1、修正：在启用了插件 simple-obfs 的情况下，libev 版启动失败的问题；<br>2、修正：在使用 /etc/init.d/shadowsocks-libev restart 命令重启 libev 版服务端时，偶尔出现的 “bind: Address already in use” 问题；<br>3、修正：移除 libev 版配置文件中的 local_address 字段；<br>4、修改：不再默认使用 root 用户启动，改为使用 nobody 用户启动 libev 版服务端 ss-server；<br>5、升级：mbedtls 到版本 2.9.0；<br>6、修改：libev 版启动脚本中的 -u 参数（即同时启用 TCP 和 UDP 模式），改到配置文件里配置为 “mode”: “tcp_and_udp”；<br>7、修改：libev 版配置文件的内置 NameServers 为 8.8.8.8，默认是从 /etc/resolv.conf 中取得。  </p>
+</li>
+<li><p>以下省略……</p>
+</li>
+</ul>
+<h2 id="更多单版本-Shadowsocks-服务端一键安装脚本"><a href="#更多单版本-Shadowsocks-服务端一键安装脚本" class="headerlink" title="更多单版本 Shadowsocks 服务端一键安装脚本"></a>更多单版本 Shadowsocks 服务端一键安装脚本</h2><ul>
+<li><a href="https://teddysun.com/342.html">Shadowsocks Python 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
+<li><a href="https://shadowsocks.be/9.html">ShadowsocksR 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
+<li><a href="https://teddysun.com/357.html">CentOS 下 Shadowsocks-libev 一键安装脚本</a>  </li>
+<li><a href="https://teddysun.com/358.html">Debian 下 Shadowsocks-libev 一键安装脚本</a>  </li>
+<li><a href="https://teddysun.com/392.html">Shadowsocks-go 一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
+</ul>
+<p><strong>注意：以上单版本不可与该四合一版本混用。</strong></p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
       </tags>
   </entry>
 </search>
