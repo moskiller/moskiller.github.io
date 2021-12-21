@@ -493,14 +493,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    572
+                    513
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -526,23 +526,23 @@
                 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>  原来一直用着的<a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a>备份插件，今天突然出错了，我在执行<code>hexo b</code>后，控制台显示如下：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
 INFO  Validating config
-INFO  Start backup: git
-[Source 49694d1] Backup My Blog
+INFO  Start backup: <span class="token function">git</span>
+<span class="token punctuation">[</span>Source 49694d1<span class="token punctuation">]</span> Backup My Blog
 
-fatal: &#39;github&#39; does not appear to be a git repository
-fatal: Could not read from remote repository.
+fatal: <span class="token string">'github'</span> does not appear to be a <span class="token function">git</span> repository
+fatal: Could not <span class="token builtin class-name">read</span> from remote repository.
 
-Please make sure you have the correct access rights
+Please <span class="token function">make</span> sure you have the correct access rights
 and the repository exists.
-INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+INFO  Backup done: <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>我的<code>_config.yml</code>配置是这样的</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">backup:
-  type: git
+  type: <span class="token function">git</span>
   theme: hexo-theme-matery
   message: Backup My Blog
   repository:
-    github: git@github.com:moskiller&#x2F;moskiller.github.io.git,Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    github: git@github.com:moskiller/moskiller.github.io.git,Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -556,18 +556,18 @@ INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span><
 
 <p>然后，我再运行 <code>hexo b</code>，出现了以下提示</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  Validating config
-INFO  Start backup: git
-git [ &#39;add&#39;, &#39;-A&#39; ]
-git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
+INFO  Start backup: <span class="token function">git</span>
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'add'</span>, <span class="token string">'-A'</span> <span class="token punctuation">]</span>
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'commit'</span>, <span class="token string">'-m'</span>, <span class="token string">'Backup My Blog'</span> <span class="token punctuation">]</span>
 nothing to commit, working tree clean
-git [ &#39;push&#39;, &#39;-u&#39;, &#39;github&#39;, &#39;master:Source&#39;, &#39;--force&#39; ]
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'push'</span>, <span class="token string">'-u'</span>, <span class="token string">'github'</span>, <span class="token string">'master:Source'</span>, <span class="token string">'--force'</span> <span class="token punctuation">]</span>
 
-fatal: &#39;github&#39; does not appear to be a git repository
-fatal: Could not read from remote repository.
+fatal: <span class="token string">'github'</span> does not appear to be a <span class="token function">git</span> repository
+fatal: Could not <span class="token builtin class-name">read</span> from remote repository.
 
-Please make sure you have the correct access rights
+Please <span class="token function">make</span> sure you have the correct access rights
 and the repository exists.
-INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+INFO  Backup done: <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>以上内容里的主要错误信息翻译过来就是：</p>
 <blockquote>
@@ -582,17 +582,17 @@ INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span><
 <p>最后测试结果：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vincent@iMac moskiller.github.io % hexo b
 INFO  Validating config
-INFO  Start backup: git
-git [ &#39;add&#39;, &#39;-A&#39; ]
-git [ &#39;commit&#39;, &#39;-m&#39;, &#39;Backup My Blog&#39; ]
-[Source f59b8df] Backup My Blog
- 1 file changed, 1 insertion(+), 1 deletion(-)
-git [ &#39;push&#39;, &#39;-u&#39;, &#39;origin&#39;, &#39;Source:Source&#39;, &#39;--force&#39; ]
-Enter passphrase for key &#39;&#x2F;Users&#x2F;vincent&#x2F;.ssh&#x2F;id_rsa&#39;: 
-To github.com:moskiller&#x2F;moskiller.github.io.git
-   a7d2cfd..f59b8df  Source -&gt; Source
-Branch &#39;Source&#39; set up to track remote branch &#39;Source&#39; from &#39;origin&#39;.
-INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+INFO  Start backup: <span class="token function">git</span>
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'add'</span>, <span class="token string">'-A'</span> <span class="token punctuation">]</span>
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'commit'</span>, <span class="token string">'-m'</span>, <span class="token string">'Backup My Blog'</span> <span class="token punctuation">]</span>
+<span class="token punctuation">[</span>Source f59b8df<span class="token punctuation">]</span> Backup My Blog
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+<span class="token function">git</span> <span class="token punctuation">[</span> <span class="token string">'push'</span>, <span class="token string">'-u'</span>, <span class="token string">'origin'</span>, <span class="token string">'Source:Source'</span>, <span class="token string">'--force'</span> <span class="token punctuation">]</span>
+Enter passphrase <span class="token keyword">for</span> key <span class="token string">'/Users/vincent/.ssh/id_rsa'</span><span class="token builtin class-name">:</span> 
+To github.com:moskiller/moskiller.github.io.git
+   a7d2cfd<span class="token punctuation">..</span>f59b8df  Source -<span class="token operator">></span> Source
+Branch <span class="token string">'Source'</span> <span class="token builtin class-name">set</span> up to track remote branch <span class="token string">'Source'</span> from <span class="token string">'origin'</span><span class="token builtin class-name">.</span>
+INFO  Backup done: <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>问题解决了！</p>
 
@@ -1076,7 +1076,7 @@ INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span><
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1117,7 +1117,7 @@ INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span><
     </div>
 </div>
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
@@ -1134,7 +1134,7 @@ INFO  Backup done: git<span aria-hidden="true" class="line-numbers-rows"><span><
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.5k</span>&nbsp;字
+                class="white-color">8.4k</span>&nbsp;字
             
             
             
