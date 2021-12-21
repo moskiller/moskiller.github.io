@@ -110,6 +110,26 @@ INFO  Backup done: <span class="token function">git</span><span aria-hidden="tru
       </tags>
   </entry>
   <entry>
+    <title>「你快乐，所以我快乐」</title>
+    <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
+    <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
+<p>那我的快乐如何达成？</p>
+<p>在有限的金钱和能力的情况下，</p>
+<p>需要牺牲下自身的快乐来源，</p>
+<p>首先满足「你快乐」。</p>
+<p>但终归可能不是我真正的快乐，</p>
+<p>因为有时是别无选择的结果，</p>
+<p>做着不喜欢的工作赚着微薄的薪水。</p>
+<p>洗洗睡吧，梦里啥都有！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复DSDT时常用错误的处理办法</title>
     <url>/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    对于Hackinto电脑来说，正确的clover、config.plist和kext只能确保大部分电脑可以正常安装MacOS，但并不一定能保证能正常使用。在启动时，电脑会去读取ACPI的配置，不当的DSDT和SSDT有可能会导致出现系统启动失败、无法休眠、电池电量无法显示等很多奇奇怪怪的问题。很多人都知道使用DSDT补丁可以开双核，但DSDT的功能不仅仅如此，还可以<strong>修复</strong>显卡、声卡、网卡、电池、休眠等问题。<br>​<br>​<br><strong>DSDT只是描述你硬件的文件，并不是驱动文件，它只是告诉你的MacOS系统，你的主板上都有些什么硬件，如果你的MacOS并不支持这种硬件，那么DSDT也无法驱动你的这个硬件！！！</strong><br>​<br>​<br>这里是你在MacOS中修复DSDT时需要用到的软件：<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a> (RehabMan 2018-0507版)</p>
@@ -208,26 +228,6 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </categories>
       <tags>
         <tag>DSDT 黑苹果</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「你快乐，所以我快乐」</title>
-    <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
-    <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
-<p>那我的快乐如何达成？</p>
-<p>在有限的金钱和能力的情况下，</p>
-<p>需要牺牲下自身的快乐来源，</p>
-<p>首先满足「你快乐」。</p>
-<p>但终归可能不是我真正的快乐，</p>
-<p>因为有时是别无选择的结果，</p>
-<p>做着不喜欢的工作赚着微薄的薪水。</p>
-<p>洗洗睡吧，梦里啥都有！</p>
-]]></content>
-      <categories>
-        <category>心情の随笔</category>
-      </categories>
-      <tags>
-        <tag>心情</tag>
       </tags>
   </entry>
   <entry>
@@ -339,67 +339,6 @@ Reserved Method must return a value (Buffer required for _OSC)<span aria-hidden=
       </tags>
   </entry>
   <entry>
-    <title>如何优雅地保存你在Github上的Hexo源代码</title>
-    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
-    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
-<hr>
-<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
-<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
-</li>
-<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
-</li>
-<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
-</li>
-<li><p>使用git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
-</li>
-<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
-</li>
-<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-hexo init
-<span class="token function">npm</span> <span class="token function">install</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git（此时当前分支应显示为 Source ）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
-</li>
-<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
-</li>
-</ol>
-<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
-<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
-</li>
-<li><p>首先在终端里依次执行:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
-<span class="token function">git</span> commit -m “…”
-<span class="token function">git</span> push origin Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
-</li>
-</ol>
-<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
-<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
-<ol>
-<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
-<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
-<span class="token function">npm</span> <span class="token function">install</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git 
-
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
-**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>rejected<span class="token punctuation">]</span>  master-<span class="token operator">></span>master<span class="token punctuation">(</span>fetch first<span class="token punctuation">)</span>  
-error:failed to push some refs to <span class="token string">'https://github.com/xxx/xxx.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
-<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
-]]></content>
-      <categories>
-        <category>优雅の分享</category>
-      </categories>
-      <tags>
-        <tag>Github Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何优雅地划水</title>
     <url>/2021/ru-he-you-ya-di-hua-shui/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h4 id="萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。"><a href="#萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。" class="headerlink" title="萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。"></a>萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。</h4><h2 id="1、基础版"><a href="#1、基础版" class="headerlink" title="1、基础版"></a>1、基础版</h2><h5 id="1-1、多喝水，多放水"><a href="#1-1、多喝水，多放水" class="headerlink" title="1.1、多喝水，多放水"></a>1.1、多喝水，多放水</h5><p>  厕所是划水最好的场所，没有之一。在封闭的空间里你可以自由地做任何想做的事情。刷微博、聊微信坐着或者趴在马桶上小憩十分钟等等都可以。<br>  去厕所摸鱼的关键点在于准备一个小点儿的杯子。多喝点儿水不仅有益身体健康，还能大大增加去厕所的次数。而为啥要准备一个小点儿的杯子，原因就在于如果你的杯子小，水还喝得多，就能去多接几次水，多划几分钟。<br>  去厕所时也要注意，记得把电脑进行休眠。一来避免老板过来看到你的任务栏有与工作无关的程序；二来可以让老板觉得你是一个节俭环保的员工，给老板留下一个好印象，一举两得。</p>
@@ -452,6 +391,67 @@ error:failed to push some refs to <span class="token string">'https://github.com
       </categories>
       <tags>
         <tag>优雅人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地保存你在Github上的Hexo源代码</title>
+    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
+    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
+<hr>
+<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
+<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
+</li>
+<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
+</li>
+<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
+</li>
+<li><p>使用git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#109;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+</li>
+<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+</li>
+<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+hexo init
+<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git（此时当前分支应显示为 Source ）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
+</li>
+<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
+</li>
+</ol>
+<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
+<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
+</li>
+<li><p>首先在终端里依次执行:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit -m “…”
+<span class="token function">git</span> push origin Source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
+</li>
+</ol>
+<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
+<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
+<ol>
+<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
+<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git 
+
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**
+**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>rejected<span class="token punctuation">]</span>  master-<span class="token operator">></span>master<span class="token punctuation">(</span>fetch first<span class="token punctuation">)</span>  
+error:failed to push some refs to <span class="token string">'https://github.com/xxx/xxx.git'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
+<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
       </tags>
   </entry>
   <entry>
