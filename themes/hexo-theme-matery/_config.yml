@@ -438,7 +438,7 @@ libs:
     aos: /libs/aos/aos.css
     animate: /libs/animate/animate.min.css # V3.5.1
     lightgallery: /libs/lightGallery/css/lightgallery.min.css # V1.6.11
-    aplayer: /libs/aplayer/APlayer.min.css
+    aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css #/libs/aplayer/APlayer.min.css
     dplayer: /libs/dplayer/DPlayer.min.css
     gitalk: /libs/gitalk/gitalk.css
     jqcloud: /libs/jqcloud/jqcloud.css
@@ -454,7 +454,7 @@ libs:
     lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
     clicklove: /libs/others/clicklove.js
     busuanzi: /libs/others/busuanzi.pure.mini.js
-    aplayer: /libs/aplayer/APlayer.min.js
+    aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js #/libs/aplayer/APlayer.min.js
     dplayer: /libs/dplayer/DPlayer.min.js
     crypto: /libs/cryptojs/crypto-js.min.js
     echarts: /libs/echarts/echarts.min.js
