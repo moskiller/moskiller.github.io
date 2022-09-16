@@ -1,13 +1,12 @@
 ---
-permalink: /404.html
 title: 404
+date: 2021-12-02
 type: "404"
 Layout: "404"
 description: "Oops～，我崩溃了！找不到你想要的页面 :("
-comments: false
-sitemap: false
 ---
-```
+
+
 404
 	not
 		found
@@ -23,4 +22,3 @@ sitemap: false
 		not
 	found
 404
-```
