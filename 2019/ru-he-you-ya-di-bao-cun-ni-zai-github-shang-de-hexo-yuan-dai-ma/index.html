@@ -534,7 +534,7 @@
 </li>
 <li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
 </li>
-<li><p>使用git clone <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+<li><p>使用git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>:moskiller/moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
 </li>
 <li><p>安装 Hexo 前，请先确认你是否已安装<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> 和 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
 </li>
@@ -1118,7 +1118,7 @@ error:failed to push some refs to <span class="token string">'https://github.com
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2021</span>
+                <span id="year">2018-2022</span>
             
             <a href="/about" target="_blank">VinceNT.范</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1378,19 +1378,20 @@ $(function () {
     
 
     
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
 
     <!-- 雪花特效 -->
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
     
