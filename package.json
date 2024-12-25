@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "7.3.0"
+    "version": "latest"
   },
   "dependencies": {
     "braces": "latest",
     "css-select": "latest",
     "css-what": "latest",
-    "hexo": "latest",
+    "hexo": "^7.3.0",
     "hexo-asset-image": "latest",
-    "hexo-deployer-git": "latest",
+    "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "latest",
     "hexo-generator-category": "latest",
     "hexo-generator-feed": "latest",
