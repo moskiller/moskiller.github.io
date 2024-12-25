@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>2019年第一篇博文</title>
+    <url>/2019/2019-nian-di-yi-pian-bo-wen/</url>
+    <content><![CDATA[<h2 id="电脑硬盘挂了"><a href="#电脑硬盘挂了" class="headerlink" title="电脑硬盘挂了"></a>电脑硬盘挂了</h2><p>所有文件都没了。包括Hexo的配置和博文。。。</p>
+<span id="more"></span>  
+<p>原来想着在github上搞个分支备份的，因为我懒。。。。所以没有备份<br>既然这样，那就一切推倒重来吧，2019，重新启航！</p>
+]]></content>
+      <categories>
+        <category>建博の笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019年，新年快乐</title>
+    <url>/2019/2019-nian-xin-nian-kuai-le/</url>
+    <content><![CDATA[<h2 id="转眼间，2018挥手告别"><a href="#转眼间，2018挥手告别" class="headerlink" title="转眼间，2018挥手告别"></a>转眼间，2018挥手告别</h2><p>&ensp;&ensp;一年时间又过去了，想一想好像也只是搞定了房子，其它的计划都没有实现，希望2019年可以实现吧！祝大家新年快乐，身体健康，财源广进。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>2019</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-git-backup备份插件推送到github报错的问题和解决方法</title>
+    <url>/2021/hexo-git-backup-bei-fen-cha-jian-tui-song-dao-github-bao-cuo-de-wen-ti-he-jie-jue-fang-fa/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>  原来一直用着的<a href="https://github.com/coneycode/hexo-git-backup">hexo-git-backup</a>备份插件，今天突然出错了，我在执行<code>hexo b</code>后，控制台显示如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vincent@iMac moskiller.github.io % hexo b</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start backup: git</span><br><span class="line">[Source 49694d1] Backup My Blog</span><br><span class="line"></span><br><span class="line">fatal: <span class="string">&#x27;github&#x27;</span> does not appear to be a git repository</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">INFO  Backup <span class="keyword">done</span>: git</span><br></pre></td></tr></table></figure>
+
+<p>我的<code>_config.yml</code>配置是这样的</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  theme: hexo-theme-matery</span><br><span class="line">  message: Backup My Blog</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:moskiller/moskiller.github.io.git,Source</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="检查过程"><a href="#检查过程" class="headerlink" title="检查过程"></a>检查过程</h2><p>  上网查询无果后，我在<code>node_modules/hexo-git-backup/git.js</code> 文件中加入了一行代码以显示执行的命令 （76-77行之间）<br>即将这个</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> run = <span class="keyword">function</span>(<span class="params">command, args, callback</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> cp = <span class="title function_">spawn</span>(command, args, &#123;<span class="attr">cwd</span>: deployDir&#125;);</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> run = <span class="keyword">function</span>(<span class="params">command, args, callback</span>)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(command, args);</span><br><span class="line">  <span class="keyword">var</span> cp = <span class="title function_">spawn</span>(command, args, &#123;<span class="attr">cwd</span>: deployDir&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>然后，我再运行 <code>hexo b</code>，出现了以下提示</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start backup: git</span><br><span class="line">git [ <span class="string">&#x27;add&#x27;</span>, <span class="string">&#x27;-A&#x27;</span> ]</span><br><span class="line">git [ <span class="string">&#x27;commit&#x27;</span>, <span class="string">&#x27;-m&#x27;</span>, <span class="string">&#x27;Backup My Blog&#x27;</span> ]</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">git [ <span class="string">&#x27;push&#x27;</span>, <span class="string">&#x27;-u&#x27;</span>, <span class="string">&#x27;github&#x27;</span>, <span class="string">&#x27;master:Source&#x27;</span>, <span class="string">&#x27;--force&#x27;</span> ]</span><br><span class="line"></span><br><span class="line">fatal: <span class="string">&#x27;github&#x27;</span> does not appear to be a git repository</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">INFO  Backup <span class="keyword">done</span>: git</span><br></pre></td></tr></table></figure>
+
+<p>以上内容里的主要错误信息翻译过来就是：</p>
+<blockquote>
+<p>致命：“origin”不是一个 git 存储库<br>致命：无法读取远程存储库</p>
+</blockquote>
+<blockquote>
+<p>请确定你有正确的访问权力，并且 存储库存在 </p>
+</blockquote>
+<p>问题原因找到了！</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>参考网上资料，将<code>node_modules/hexo-git-backup/git.js</code> 的第135行：<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;master:&#39; + repo[t].branch, &#39;--force&#39;]);</code><br>改成<br><code>commands.push([&#39;push&#39;, &#39;-u&#39;, t, &#39;Source:&#39; + repo[t].branch, &#39;--force&#39;]);</code></p>
+<p>然后再将<code>_config.yml</code>配置文件中<code>github:</code> 更改为<code>origin:</code></p>
+<p>最后测试结果：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vincent@iMac moskiller.github.io % hexo b</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start backup: git</span><br><span class="line">git [ <span class="string">&#x27;add&#x27;</span>, <span class="string">&#x27;-A&#x27;</span> ]</span><br><span class="line">git [ <span class="string">&#x27;commit&#x27;</span>, <span class="string">&#x27;-m&#x27;</span>, <span class="string">&#x27;Backup My Blog&#x27;</span> ]</span><br><span class="line">[Source f59b8df] Backup My Blog</span><br><span class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line">git [ <span class="string">&#x27;push&#x27;</span>, <span class="string">&#x27;-u&#x27;</span>, <span class="string">&#x27;origin&#x27;</span>, <span class="string">&#x27;Source:Source&#x27;</span>, <span class="string">&#x27;--force&#x27;</span> ]</span><br><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/Users/vincent/.ssh/id_rsa&#x27;</span>: </span><br><span class="line">To github.com:moskiller/moskiller.github.io.git</span><br><span class="line">   a7d2cfd..f59b8df  Source -&gt; Source</span><br><span class="line">Branch <span class="string">&#x27;Source&#x27;</span> <span class="built_in">set</span> up to track remote branch <span class="string">&#x27;Source&#x27;</span> from <span class="string">&#x27;origin&#x27;</span>.</span><br><span class="line">INFO  Backup <span class="keyword">done</span>: git</span><br></pre></td></tr></table></figure>
+
+<p>问题解决了！</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不知不觉又一年</title>
+    <url>/2024/bu-zhi-bu-jue-you-yi-nian/</url>
+    <content><![CDATA[<p>烟花短暂，我们永远。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「你快乐，所以我快乐」</title>
+    <url>/2020/ni-kuai-le-suo-yi-wo-kuai-le/</url>
+    <content><![CDATA[<h3 id="「你快乐，所以我快乐」"><a href="#「你快乐，所以我快乐」" class="headerlink" title="「你快乐，所以我快乐」"></a>「你快乐，所以我快乐」</h3><p>我的快乐并不只有因你而快乐……</p>
+<p>那我的快乐如何达成？</p>
+<p>在有限的金钱和能力的情况下，</p>
+<p>需要牺牲下自身的快乐来源，</p>
+<p>首先满足「你快乐」。</p>
+<p>但终归可能不是我真正的快乐，</p>
+<p>因为有时是别无选择的结果，</p>
+<p>做着不喜欢的工作赚着微薄的薪水。</p>
+<p>洗洗睡吧，梦里啥都有！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复DSDT时常用错误的处理办法</title>
+    <url>/2019/xiu-fu-dsdt-shi-chang-yong-cuo-wu-de-chu-li-ban-fa/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    对于Hackinto电脑来说，正确的clover、config.plist和kext只能确保大部分电脑可以正常安装MacOS，但并不一定能保证能正常使用。在启动时，电脑会去读取ACPI的配置，不当的DSDT和SSDT有可能会导致出现系统启动失败、无法休眠、电池电量无法显示等很多奇奇怪怪的问题。很多人都知道使用DSDT补丁可以开双核，但DSDT的功能不仅仅如此，还可以<strong>修复</strong>显卡、声卡、网卡、电池、休眠等问题。<br>​<br>​<br><strong>DSDT只是描述你硬件的文件，并不是驱动文件，它只是告诉你的MacOS系统，你的主板上都有些什么硬件，如果你的MacOS并不支持这种硬件，那么DSDT也无法驱动你的这个硬件！！！</strong><br>​<br>​<br>这里是你在MacOS中修复DSDT时需要用到的软件：<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a> (RehabMan 2018-0507版)</p>
+<p>以下例子是我在修复DSDT中常见的问题，如果以后有新的问题会继续更新。</p>
+<h3 id="修复例子"><a href="#修复例子" class="headerlink" title="修复例子"></a>修复例子</h3><ol>
+<li><strong>switch变量未设置为Integer整数时的错误提示：</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Switch expression is not a static Integer/Buffer/String data type, default to integer</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (WMBC, 3, Serialized)</span><br><span class="line">           &#123;</span><br><span class="line">               Store (0x01, Local0)</span><br><span class="line">               Switch (Arg1)</span><br><span class="line">               &#123;</span><br><span class="line">                   Case (0x43455053)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修复方法:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (WMBC, 3, Serialized)</span><br><span class="line">           &#123;</span><br><span class="line">               Store (0x01, Local0)</span><br><span class="line">               Switch (ToInteger (Arg1))</span><br><span class="line">               &#123;</span><br><span class="line">                   Case (0x43455﻿053)</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br>​<br>​<br>2. <strong>定义了一个局部变量，但是Method方法没有用到这个变量时的错误提示：(注：如果这个是Warnings警告的话，可以不管它，但如果是Errors错误的话，必须修复。)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method Local is set, but never used (Local 0)</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Store (0x03, OSVR)</span><br><span class="line">       If (CondRefOf (\_OSI, Local0))</span><br><span class="line">       &#123;</span><br><span class="line">          If (_OSI (&quot;Windows 2001&quot;))</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Store (RGE3, PMFG)</span><br><span class="line">                            Store (RGE3, Local0)</span><br><span class="line">                            And (RGE0, 0x9F, RGE0)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修复方法</strong> <strong>(</strong> And(Local0, Ones, Local0) &#x3D;&#x3D;&gt; Local 0 set to 0x11111111 ﻿<strong>)</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Store (0x03, OSVR)</span><br><span class="line">       If (CondRefOf (\_OSI, Local0))</span><br><span class="line">       &#123;</span><br><span class="line">          And(Local0, Ones, Local0)</span><br><span class="line">          If (_OSI (&quot;Windows 2001&quot;))</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Store (RGE3, PMFG)</span><br><span class="line">                            Store (RGE3, Local0)</span><br><span class="line">                            And(Local0, Ones, Local0)</span><br><span class="line">                            And (RGE0, 0x9F, RGE0)</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br>​<br>​<br>3. <strong>当含有不正确或未使用的方法名时的错误提示：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Invalid object type for reserved name (_OSC: found Integer, Buffer Required)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>例子</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (_OSC, 4, Serialized)  // _OSC: Operating System Capabilities</span><br><span class="line">     &#123;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修复方法</strong> <strong>(</strong> 删除下划线，或者将其重命名，本例子中将重名为 “XOSC” <strong>)</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (XOSC, 4, Serialized)  // _OSC: Operating System Capabilities</span><br><span class="line">      &#123;</span><br></pre></td></tr></table></figure>
+
+
+<p>​<br>​<br>​<br>4. <strong>方法&#x2F;函数具有IF语句，如果为false时，则不会返回任何内容：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Not all control paths return a value (_OSC/O1EX/TINI/TWAK...etc)</span><br><span class="line">Reserved Method must return a value (Buffer required for _OSC)</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (_TINI, 0, NotSerialized)</span><br><span class="line">     &#123;            </span><br><span class="line">         If (LEqual (Arg0, ToUUID (&quot;33db4d5b-1ff7-401c-9657-7441c03dd766&quot;) /* PCI Host Bridge Device */))</span><br><span class="line">         &#123;</span><br><span class="line">             (bunch of code here that&#x27;ll get executed if the above IF statement returns true)</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修复方法 (</strong> 在方法关闭之前添加 Return (Zero) <strong>)</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Method (TINI, 4, Serialize﻿d)</span><br><span class="line">         &#123;            </span><br><span class="line">             If (LEqual (Arg0, ToUUID (&quot;33db4d5b-1ff7-401c-9657-7441c03dd766&quot;) /* PCI Host Bridge Device */))</span><br><span class="line">             &#123;</span><br><span class="line">                 (bunch of code here that&#x27;ll get executed if the above IF statement returns true)</span><br><span class="line">             &#125;</span><br><span class="line">             Return (Zero)﻿</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>DSDT 黑苹果</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分享一个VLESS VMess Trojan Trojan-Go 八合一脚本</title>
+    <url>/2021/fen-xiang-yi-ge-vless-vmess-trojan-trojan-go-ba-he-yi-jiao-ben/</url>
+    <content><![CDATA[<p>项目地址：<a href="https://github.com/mack-a/v2ray-agent">Github&#x2F;mack-a</a><br>使用指南：<a href="https://github.com/mack-a/v2ray-agent/blob/master/documents/how_to_use.md">How To Use</a></p>
+<h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><p>  在你的VPS终端中输入：<br>  <code>wget -P /root -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</code></p>
+<h3 id="支持的安装类型"><a href="#支持的安装类型" class="headerlink" title="支持的安装类型"></a>支持的安装类型</h3><p>  VLESS+TCP+TLS<br>  VLESS+TCP+xtls-rprx-direct【推荐】<br>  VLESS+gRPC+TLS【支持CDN、IPv6、延迟低】<br>  VLESS+WS+TLS【支持CDN、IPv6】<br>  Trojan+TCP+TLS【推荐】<br>  Trojan+TCP+xtls-rprx-direct【推荐】<br>  Trojan+gRPC+TLS【支持CDN、IPv6、延迟低】<br>  VMess+WS+TLS【支持CDN、IPv6】</p>
+<h3 id="组合推荐"><a href="#组合推荐" class="headerlink" title="组合推荐"></a>组合推荐</h3><p>  中转&#x2F;gia —&gt; VLESS+TCP+TLS&#x2F;XTLS、Trojan【推荐使用XTLS的xtls-rprx-direct】<br>  移动宽带 —&gt; VMESS+WS+TLS&#x2F;VLESS+WS+TLS&#x2F;VLESS+gRPC+TLS&#x2F;Trojan+gRPC+TLS + Cloudflare<br>  cloudflare-&gt; VLESS+gRPC+TLS&#x2F;Trojan+gRPC+TLS[多路复用、延迟低]</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>　换手机了</title>
+    <url>/2021/bie-liao-wo-de-iphone-6s/</url>
+    <content><![CDATA[<p>别了，我的iPhone 6S，最牛的钉子户！</p>
+<p>您好，iPhone 7 Plus，未来几年请多指教！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又一次船新启航...</title>
+    <url>/2019/you-yi-ci-chuan-xin-qi-hang/</url>
+    <content><![CDATA[<h1 id="又一次船新启航……"><a href="#又一次船新启航……" class="headerlink" title="又一次船新启航……"></a>又一次船新启航……</h1><p>  <del>大家好，我是渣渣辉……..</del>　大家好，我终于回来了，经过几个月的冼脑式学习，我觉得我越来越Low了，谢谢！</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又是一年春运时</title>
+    <url>/2020/you-shi-yi-nian-chun-yun-shi/</url>
+    <content><![CDATA[<p>又是一年将尽时，</p>
+<p>一岁年轮一岁心。</p>
+<p>漫漫红尘走一回，</p>
+<p>多少寻觅皆成空。</p>
+<p>聚散依依几多情愁，</p>
+<p>月缺月盈几多悲喜。</p>
+<p>感谢时光中的每一次遇见，</p>
+<p>因为陪伴，岁月更加温暖。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好像很忙的样子</title>
+    <url>/2019/hao-xiang-hen-mang-de-yang-zi/</url>
+    <content><![CDATA[<p>&emsp;这段时间好像很忙，又好像没什么忙，时间被碾得如此之碎，一阵风吹过后全都不知去向了。以至于在我试图回想这一年到底干了些什么的时候，发现自己简直就像是从一场昏迷中醒过来一样。</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地保存你在Github上的Hexo源代码</title>
+    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
+    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
+<hr>
+<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
+<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
+</li>
+<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
+</li>
+<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
+</li>
+<li><p>使用git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:moskiller&#x2F;moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
+</li>
+<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
+</li>
+<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（此时当前分支应显示为 Source ）</span><br></pre></td></tr></table></figure></li>
+<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
+</li>
+<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
+</li>
+</ol>
+<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
+<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
+</li>
+<li><p>首先在终端里依次执行:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin Source</span><br></pre></td></tr></table></figure></li>
+<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
+</li>
+</ol>
+<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
+<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
+<ol>
+<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
+<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line"></span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![rejected]  master-&gt;master(fetch first)  </span><br><span class="line">error:failed to push some refs to <span class="string">&#x27;https://github.com/xxx/xxx.git&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
+<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地一键安装最新内核并开启Google BBR</title>
+    <url>/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</url>
+    <content><![CDATA[<p>&emsp;&emsp;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。<br>&emsp;&emsp;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。于是就有大神根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 的脚本。</p>
+<h2 id="适用环境"><a href="#适用环境" class="headerlink" title="适用环境"></a>适用环境</h2><blockquote>
+<p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
+<p> 本文转载自：<a href="https://teddysun.com/489.html">秋水逸冰 » 一键安装最新内核并开启 BBR 脚本</a>  </p>
+<p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等<br>内存要求：≥128M<br>日期　　：2018 年 12 月 14 日  </p>
+</blockquote>
+<h3 id="关于本脚本"><a href="#关于本脚本" class="headerlink" title="关于本脚本"></a>关于本脚本</h3><ol>
+<li>本脚本已在 Vultr 上的 VPS 全部测试通过。  </li>
+<li>当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。  </li>
+<li>脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导, 手动选择内核即可。  </li>
+<li>由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。</li>
+</ol>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh  </span><br></pre></td></tr></table></figure>
+<p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。<br>至此，安装完成。</p>
+<h2 id="验证是否安装成功的方法"><a href="#验证是否安装成功的方法" class="headerlink" title="验证是否安装成功的方法"></a>验证是否安装成功的方法</h2><p>&emsp;&emsp;重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<p>查看内核版本，显示为最新版就表示 OK 了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
+<p> 返回值一般为：<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>或者为：<br><code>net.ipv4.tcp_available_congestion_control = reno cubic bbr</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure>
+<p>返回值一般为：<br><code>net.ipv4.tcp_congestion_control = bbr</code>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sysctl net.core.default_qdisc</span><br></pre></td></tr></table></figure>
+<p>返回值一般为：<br><code>net.core.default_qdisc = fq</code>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure>
+<p>返回值有 tcp_bbr 模块即说明 bbr 已启动。<strong>注意：并不是所有的 VPS 都会有此返回值，若没有也属正常。</strong></p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地划水</title>
+    <url>/2021/ru-he-you-ya-di-hua-shui/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h4 id="萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。"><a href="#萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。" class="headerlink" title="萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。"></a>萌娘百科：划水，方言词汇，和打酱油是一个意思。现泛指上班等集体活动期间某些人的偷懒行为。</h4><h2 id="1、基础版"><a href="#1、基础版" class="headerlink" title="1、基础版"></a>1、基础版</h2><h5 id="1-1、多喝水，多放水"><a href="#1-1、多喝水，多放水" class="headerlink" title="1.1、多喝水，多放水"></a>1.1、多喝水，多放水</h5><p>  厕所是划水最好的场所，没有之一。在封闭的空间里你可以自由地做任何想做的事情。刷微博、聊微信坐着或者趴在马桶上小憩十分钟等等都可以。<br>  去厕所摸鱼的关键点在于准备一个小点儿的杯子。多喝点儿水不仅有益身体健康，还能大大增加去厕所的次数。而为啥要准备一个小点儿的杯子，原因就在于如果你的杯子小，水还喝得多，就能去多接几次水，多划几分钟。<br>  去厕所时也要注意，记得把电脑进行休眠。一来避免老板过来看到你的任务栏有与工作无关的程序；二来可以让老板觉得你是一个节俭环保的员工，给老板留下一个好印象，一举两得。</p>
+<h5 id="1-2、黄易云阅读-word-模式"><a href="#1-2、黄易云阅读-word-模式" class="headerlink" title="1.2、黄易云阅读(word 模式)"></a>1.2、黄易云阅读(word 模式)</h5><p>打开Word看小说，你可真是个小机智~<br>网址：<a href="http://yuedu.163.com/">网易云阅读</a> – <a href="http://yuedu.163.com/book_reader/f8574d18d9624424baeb0964890ad19c_4">《红楼梦》</a><br>演示：《流浪地球》<br><img src="https://i.loli.net/2021/11/19/7JmWRHwMuPZANtf.png" alt="截屏2021-11-19 09.33.20-7286359.png"></p>
+<h5 id="1-3、隐蔽小说阅读器"><a href="#1-3、隐蔽小说阅读器" class="headerlink" title="1.3、隐蔽小说阅读器"></a>1.3、隐蔽小说阅读器</h5><p>隐蔽 TXT 阅读器，看小说专用。背景可以设置为透明，只有字没有边框的那种，有人看你屏幕也不知道你在干嘛。<br>介绍：PCreader是一款具有，无边框、背景透明、快捷键影藏&#x2F;显示的电子书阅读软件。<br>官网：<a href="http://pcreader.sinaapp.com/">PCreader</a><br>演示：<br><img src="https://i.loli.net/2021/11/19/NlzVBpMODwQGPqI.jpg" alt="toumin.jpg"></p>
+<h5 id="1-4、快捷指令"><a href="#1-4、快捷指令" class="headerlink" title="1.4、快捷指令"></a>1.4、快捷指令</h5><p>记住一些常用的快捷指令，处变不惊可以做到游刃有余。[alt+F4]一瞬间关闭当前页面；[alt+tab]快速切换页面。<br>这里推荐一些划水打发时间的趣站：</p>
+<p><a href="https://www.v2ex.com/">V2EX</a><br><a href="https://www.zhihu.com/">知乎</a><br><a href="http://jandan.net/pic">煎蛋(无聊图)</a><br><a href="https://www.smzdm.com/">什么值得买</a><br><a href="http://forum.xitek.com/forum.php">色影无忌</a><br><a href="https://bbs.hupu.com/all-gambia">虎扑(步行街)</a><br><a href="https://www.jd.com/">京东</a><br><a href="https://www.taobao.com/">淘宝</a><br><a href="https://www.autohome.com.cn/">汽车之家</a><br><a href="https://www.qipamaijia.com/">奇葩买家秀</a></p>
+<blockquote>
+<p>P.S. 在工位上直接拿起手机刷微博、在微信上闲聊是摸鱼划水的大忌。就跟你考试直接拿手机作弊一样，目标明显，被发现要进行危机处理时动静也太大。</p>
+</blockquote>
+<p><strong>所以，可以玩，悠着点！</strong></p>
+<h2 id="２、进阶版"><a href="#２、进阶版" class="headerlink" title="２、进阶版"></a>２、进阶版</h2><h5 id="2-1、BossSensor-老板监视器"><a href="#2-1、BossSensor-老板监视器" class="headerlink" title="2.1、BossSensor(老板监视器)"></a>2.1、BossSensor(老板监视器)</h5><p>当老板接近时隐藏屏幕。Github地址：<a href="https://github.com/Hironsan/BossSensor">BossSensor</a><br>演示：<br>老板站了起来。他正在接近。<br><img src="https://i.loli.net/2021/11/19/ceArvw7YqVhkpIK.jpg" alt="standup.jpg"></p>
+<p>当他接近时，程序获取面部图像并对图像进行分类。<br><img src="https://i.loli.net/2021/11/19/QD2nw3BbcjahkmU.jpg" alt="approach.jpg"></p>
+<p>如果图像被归类为Boss，它将监视变化。<br><img src="https://i.loli.net/2021/11/19/xhnqK5ieMIDj1Cr.jpg" alt="editor.jpg"></p>
+<h5 id="2-2、命令行里摸鱼"><a href="#2-2、命令行里摸鱼" class="headerlink" title="2.2、命令行里摸鱼"></a>2.2、命令行里摸鱼</h5><h6 id="2-2-1、【Telegram】"><a href="#2-2-1、【Telegram】" class="headerlink" title="2.2.1、【Telegram】"></a>2.2.1、【Telegram】</h6><p>上班看电报群里吹牛逼，telegram命令行版本。<br>Github地址1：<a href="https://github.com/AndreiRegiani/termgram">AndreiRegiani&#x2F;termgram</a><br>演示：<br><img src="https://i.loli.net/2021/11/19/nyo9Um7MuAJz3Lr.gif" alt="README.gif"></p>
+<h6 id="2-2-2、【Instagram】"><a href="#2-2-2、【Instagram】" class="headerlink" title="2.2.2、【Instagram】"></a>2.2.2、【Instagram】</h6><p>有时在工作期间检查你的Instagram有点奇怪，那么为什么不检查你的终端内的你的Instagram？好的…我知道在工作期间检查这个仍然很奇怪…… 说实话，我这样做只是为了纯粹的乐趣。<br>Github地址：<a href="https://github.com/instagrambot/instagram-terminal-news-feed">instagrambot&#x2F;instagram-terminal-news-feed</a><br>演示：<br>没颜色（隐身模式 - 建议在工作期间使用它 ）<br><img src="https://i.loli.net/2021/11/19/RPG6umJIAF8hbti.gif" alt="demo.gif"></p>
+<p>有颜色<br><img src="https://i.loli.net/2021/11/19/uV6TmDfjroNAvQk.gif" alt="demo-color.gif"></p>
+<h6 id="2-2-3、【知乎】"><a href="#2-2-3、【知乎】" class="headerlink" title="2.2.3、【知乎】"></a>2.2.3、【知乎】</h6><p>知乎的命令行版本<br>开源Coding：<a href="https://coding.net/u/niuoh/p/zhihu_cmd/git?public=true">https://coding.net/u/niuoh/p/zhihu_cmd&#x2F;git?public&#x3D;true</a></p>
+<h6 id="2-2-4、【genact】"><a href="#2-2-4、【genact】" class="headerlink" title="2.2.4、【genact】"></a>2.2.4、【genact】</h6><p>这是一个无意义的活动生成器。当你真正做真正的工作时假装忙或等你的电脑！用疯狂的多任务技能给人留下深刻印象。只需打开几个实例genact并观看节目。genact有多个场景假装做了令人兴奋或有用的事情，而实际上根本没有发生任何事情。<br>Github地址：<a href="https://github.com/svenstaro/genact">svenstaro&#x2F;genact</a><br>此外，还有一个网页版本，网址为：<a href="https://svenstaro.github.io/genact/">https://svenstaro.github.io/genact/</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/u8B6lMCJgdsnDZO.gif" alt="v2-3f0660a65e590774b22a541094c46c74_b.webp.gif"></p>
+<p><img src="https://i.loli.net/2021/11/19/CgVAHBr4s16nI9a.gif" alt="v2-1daf37331190ca5760a8d098690d4ffb_b.webp.gif"></p>
+<p><img src="https://i.loli.net/2021/11/19/V6cHFEGt3lKLwd7.gif" alt="v2-6b5ebb511847e7632d7f587ca4b300eb_b.webp.gif"></p>
+<h6 id="2-2-5、【币圈】"><a href="#2-2-5、【币圈】" class="headerlink" title="2.2.5、【币圈】"></a>2.2.5、【币圈】</h6><p>上班偷偷看币圈行情<br>Token-ticker（或tt简称）是一个CLI工具，适用于加密投资者和工程师，允许您跟踪终端上您最喜欢的交易所的令牌价格和变化。<br>Github地址：<a href="https://github.com/polyrabbit/token-ticker">polyrabbit&#x2F;token-ticker</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/7Bd13AIRGVEawNr.png" alt="76717485-8560d280-676e-11ea-94af-54a5e10e9b25.png"></p>
+<h6 id="2-2-6、【V2EX】"><a href="#2-2-6、【V2EX】" class="headerlink" title="2.2.6、【V2EX】"></a>2.2.6、【V2EX】</h6><p>终端版 V2EX<br>github地址1：<a href="https://github.com/ye-yechen/v2ex-terminal">ye-yechen&#x2F;v2ex-terminal</a><br>github地址2：<a href="https://github.com/six-ddc/v2ex-shell-client">six-ddc&#x2F;v2ex-shell-client</a><br>github地址3：<a href="https://github.com/six-ddc/v2ex-go">six-ddc&#x2F;v2ex-go</a><br>github地址4：<a href="https://github.com/WittBulter/v2ex-cli">WittBulter&#x2F;v2ex-cli</a></p>
+<h6 id="2-2-7、【炒外汇】"><a href="#2-2-7、【炒外汇】" class="headerlink" title="2.2.7、【炒外汇】"></a>2.2.7、【炒外汇】</h6><p>Github地址：<a href="https://github.com/timothyye/exchangerate">https://github.com/timothyye/exchangerate</a></p>
+<h6 id="2-2-8、【查单词】"><a href="#2-2-8、【查单词】" class="headerlink" title="2.2.8、【查单词】"></a>2.2.8、【查单词】</h6><p>Github地址：<a href="https://github.com/timothyye/ydict">https://github.com/timothyye/ydict</a></p>
+<h6 id="2-2-9、【查域名】"><a href="#2-2-9、【查域名】" class="headerlink" title="2.2.9、【查域名】"></a>2.2.9、【查域名】</h6><p>Github地址：<a href="https://github.com/timothyye/namebeta">https://github.com/timothyye/namebeta</a></p>
+<h6 id="2-2-10、【NBA】"><a href="#2-2-10、【NBA】" class="headerlink" title="2.2.10、【NBA】"></a>2.2.10、【NBA】</h6><p>nba-live是一个在终端下观看NBA&amp;CBA文字直播的命令行工具。<br>Github地址：<a href="https://github.com/xwjdsh/nba-live">xwjdsh&#x2F;nba-live</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/wfqkmvWL1uMrs34.png" alt="nba-live-cui.png"></p>
+<h6 id="2-2-11、【斗地主】"><a href="#2-2-11、【斗地主】" class="headerlink" title="2.2.11、【斗地主】"></a>2.2.11、【斗地主】</h6><p>命令行版的斗地主<br>Github地址：<a href="https://github.com/ainilili/ratel">ainilili&#x2F;ratel</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/JkSgZtF8Tr7ef6x.gif" alt="v2-18f4d3f496673620b8a863f623ec3a05_b.webp.gif"></p>
+<h6 id="2-2-12、【RSS】"><a href="#2-2-12、【RSS】" class="headerlink" title="2.2.12、【RSS】"></a>2.2.12、【RSS】</h6><p>Newsboat是Newsbeuter的一个分支，一个用于文本控制台的RSS &#x2F; Atom提要阅读器。唯一的区别是Newsboat得到了积极的维护，而Newsbeuter却没有。<br>Github地址：<a href="https://github.com/newsboat/newsboat">newsboat&#x2F;newsboat</a></p>
+<h6 id="2-2-13、【Hacker-News】"><a href="#2-2-13、【Hacker-News】" class="headerlink" title="2.2.13、【Hacker News】"></a>2.2.13、【Hacker News】</h6><p>Github地址：<a href="https://github.com/donnemartin/haxor-news">donnemartin&#x2F;haxor-news</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/8aF2B1wUdm49uJq.gif" alt="687474703a2f2f692e696d6775722e636f6d2f43346d6b63334c2e676966.gif"></p>
+<h5 id="2-3、文本浏览器"><a href="#2-3、文本浏览器" class="headerlink" title="2.3、文本浏览器"></a>2.3、文本浏览器</h5><p>一个完全现代的基于文本的浏览器，呈现给TTY和浏览器<br>官网：<a href="https://www.brow.sh/">https://www.brow.sh</a><br>Github地址：<a href="https://github.com/browsh-org/browsh">browsh-org &#x2F; browsh</a><br>演示：<br><img src="https://i.loli.net/2021/11/19/rJ14yUxEXWGLReV.gif" alt="68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6262736d566b596a50644f4b48684d584f4f2f67697068792e676966.gif"></p>
+<h5 id="2-4、IDEA中摸鱼"><a href="#2-4、IDEA中摸鱼" class="headerlink" title="2.4、IDEA中摸鱼"></a>2.4、IDEA中摸鱼</h5><h6 id="2-4-1、【SmartIM】"><a href="#2-4-1、【SmartIM】" class="headerlink" title="2.4.1、【SmartIM】"></a>2.4.1、【SmartIM】</h6><p>一个防Boss的QQ&#x2F;微信聊天插件，让老板以为你是在写代码，其实，你是在聊天，不过，作为程序猿，怎么可能有时间聊天，哈哈。<br>Intellij IDEA 的插件地址：<a href="https://github.com/Jamling/SmartIM4IntelliJ">Jamling&#x2F;SmartIM4IntelliJ</a><br>Eclipse 的插件地址：<a href="https://github.com/Jamling/SmartIM4Eclipse/">Jamling&#x2F;SmartIM4Eclipse&#x2F;</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/aV5SBfME1mKT8C2.gif" alt="screenshot.gif"></p>
+<h6 id="2-4-2、【Readhub】"><a href="#2-4-2、【Readhub】" class="headerlink" title="2.4.2、【Readhub】"></a>2.4.2、【Readhub】</h6><p>在 IDE 中快捷查阅科技动态、招聘信息等 <a href="https://readhub.me/">Readhub</a> 资讯，有效利用日常工作碎片时间，功能包含：</p>
+<p>展示 Readhub 各板块资讯及摘要信息<br>支持PC本地浏览器访问资讯内容源站<br>资讯条目支持 已读 &#x2F; 未读 状态<br>支持自动刷新、本地缓存清理、本地搜索过滤等功能<br>支持资讯分享<br>JetBrains 仓库地址：<a href="http://plugins.jetbrains.com/plugin/10539-readhub">http://plugins.jetbrains.com/plugin/10539-readhub</a><br>Github地址：<a href="https://github.com/alex-yh99/Readhub">alex-yh99&#x2F;Readhub</a><br>演示：</p>
+<p><img src="https://i.loli.net/2021/11/19/wjut5SsDprde3LZ.gif" alt="Readhub.gif"></p>
+<blockquote>
+<p>总结</p>
+<p>好好学习，天天向上。   ——毛泽东</p>
+</blockquote>
+<p>转自：　<a href="https://zhuanlan.zhihu.com/p/67008586?utm_source=wechat_session">知乎专栏 - 如何优雅地划水</a></p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>优雅人生</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地在Vultr的VPS上添加SWAP交换分区</title>
+    <url>/2019/ru-he-you-ya-di-zai-vultr-de-vps-shang-tian-jia-swap-jiao-huan-fen-qu/</url>
+    <content><![CDATA[<blockquote>
+<p>首先，贴上<a href="https://www.vultr.com/docs/setup-swap-file-on-linux">Vultr官方的设置方法</a>的地址，<br>英文好的童鞋直接照着操作就行了，毕竟官方嘛，你懂的。  </p>
+</blockquote>
+<p>以下是官方原文:  </p>
+<h2 id="Setup-Swap-File-on-Linux"><a href="#Setup-Swap-File-on-Linux" class="headerlink" title="Setup Swap File on Linux"></a>Setup Swap File on Linux</h2><p>There will be times where you need to increase the responsiveness of your server to prevent out of memory issues. Out of memory issues happen when an application running on your server starts consuming a large amount of memory. Swap is designed as virtual memory, which uses your harddrive to store data that cannot be held in RAM. This tutorial will show you how to create a swap file, which should work under Ubuntu, CentOS, and Debian. This tutorial is not meant for any Custom ISO, but it is possible to follow along.</p>
+<p><strong>Step 1: Verify that swap does not exist</strong></p>
+<p>To prevent any issues during this tutorial, you will need to run the following to verify that a swap space is currently not active:</p>
+<p><code>free -m</code>  </p>
+<p>After running that command you should see something similar to this output:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">total              used       free     shared    buffers     cached</span><br><span class="line">Mem:               1840       1614     226       15          36       1340</span><br><span class="line">-/+ buffers/cache:            238      1602</span><br><span class="line">Swap:              0          0        0</span><br></pre></td></tr></table></figure>
+<p>If you see a value of 0 in the Swap section, then you can proceed to step 2.</p>
+<p>Alternatively, you can run the following command to see if there is a configured swap file:</p>
+<p><code>swapon -s</code></p>
+<p>If you do not see any output from swapon, then proceed to step 2.</p>
+<p><strong>Step 2: Create swap file</strong></p>
+<p>You will need to choose a location for your file. In this tutorial, it will be stored at the root of the server. We will create a 2GB swap file by running the following command:  </p>
+<p><code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code>  </p>
+<p>The dd command will produce output in a similar format to:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2048+0 records in</span><br><span class="line">2048+0 records out</span><br><span class="line">2147483648 bytes (2.1 GB) copied, 10.5356 s, 204 MB/s</span><br></pre></td></tr></table></figure>
+<p>Next, verify that the file is located at the root of your Vultr VPS by running:</p>
+<p><code>ls / | grep swapfile</code></p>
+<p>Proceed if you see the swapfile file.</p>
+<p><strong>Step 3: Activate the swap file</strong></p>
+<p>Swap files are not recognized automatically. We will need to tell the server how to format the file and enable it so it can be used as a valid swap file. As a security measure, update the swapfile permissions to only allow R&#x2F;W for root and no other users. Run:</p>
+<p><code>chmod 600 /swapfile</code></p>
+<p>The permission change can be verified by running the following command:</p>
+<p><code>ls -lh /swapfile</code></p>
+<p>You will see a file display:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-rw------- 1 root root 2.0G Oct  2 18:47 /swapfile</span><br></pre></td></tr></table></figure>
+<p>Next, tell the server to setup the swap file by running:</p>
+<p><code>mkswap /swapfile</code></p>
+<p>After running it, you will see the following output:</p>
+<p>Setting up swapspace version 1, size &#x3D; 2097148 KiB<br>no label, UUID&#x3D;ff3fc469-9c4b-4913-b653-ec53d6460d0e<br>If everything is shown as above, you are now ready to move on to the next step.</p>
+<p><strong>Step 4: Turn swap on</strong></p>
+<p>Once your file is ready to be used as swap, you need to enable it by running:</p>
+<p><code>swapon /swapfile</code></p>
+<p>You can verify that the swap file is active by running the free command again.</p>
+<p><code>free -m</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">total       used       free     shared    buffers     cached</span><br><span class="line">Mem:          1840       1754         86         16         23       1519</span><br><span class="line">-/+ buffers/cache:        210       1630</span><br><span class="line">Swap:         2047          0       2047</span><br></pre></td></tr></table></figure>
+
+<p>If Swap shows something other than 0, then you have successfully setup swap.</p>
+<p><strong>Step 5: Enable swap on reboot</strong></p>
+<p>By default, your server will not automatically enable this new swap file. To enable it on boot, you can update the &#x2F;etc&#x2F;fstab file. Any text editor will suffice. In this example, I will be using nano.</p>
+<p><code>nano /etc/fstab</code></p>
+<p>Add the following line at the end of the file:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/swapfile   none    swap    sw    0   0</span><br></pre></td></tr></table></figure>
+
+<p>Save and close when you are finished editing the file. We are all done!</p>
+<h2 id="以上的英文我都会，但是…-请说人话！！！"><a href="#以上的英文我都会，但是…-请说人话！！！" class="headerlink" title="以上的英文我都会，但是… 请说人话！！！"></a><del>以上的英文我都会，但是…</del> 请说人话！！！</h2><p>emmm….其实也就是几句话，首先用root登陆你的VPS。然后按以下步骤操作：</p>
+<ol>
+<li>运行&emsp; <code>free -m</code> &emsp;或者&emsp; <code>swapon -s</code> &emsp;命令，随便一个都可以，检测是否已存在SWAP分区。</li>
+<li>如果无SWAP分区，那么就运行&emsp; <code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code> &emsp;这个命令来建立SWAP分区文件。<strong>注意，Count&#x3D;2048 这个参数</strong>，这里的2048代表是2GB，如果你按这个命令输入的话，你将会创建一个2GB大小的SWAP分区，要是你想建立1GB的SWAP分区的话，将<code>2048</code>修改为<code>1024</code>即可。</li>
+<li>使用&emsp; <code>chmod 600 /swapfile</code> &emsp;命令赋予权限给SWAP文件。然后，使用<code>mkswap /swapfile</code> &emsp;命令来格式化SWAP文件。</li>
+<li>使用&emsp;<code>swapon /swapfile</code> &emsp;命令来激活SWAP文件。</li>
+<li>如果你要VPS主机重启的时候可以自动挂载Swap ，那么还需要修改fstab配置文件，用Vim或者Nano打开&#x2F;etc&#x2F;fstab文件，比如你使用的是nano，那么命令如下：&emsp; <code>nano /etc/fstab</code>，&emsp;然后在打开的文件最后面添加这一行字：&emsp; <code>/swapfile   none    swap    sw    0   0</code> &emsp; ，保存并关闭文件后，整个世界安静了！！！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地在您的VPS上一键安装 Shadowsocks（四合一版）</title>
+    <url>/2019/ru-he-you-ya-di-zai-nin-de-vps-shang-yi-jian-an-zhuang-shadowsocks-si-he-yi-ban/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>注意！作者网站 teddysun.com 需要科学上网才能访问</strong>  </p>
+<p> 本文转载自：<a href="https://teddysun.com/486.html">h秋水逸冰 » Shadowsocks 一键安装脚本（四合一）</a>  </p>
+<p>本脚本适用环境<br>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日  </p>
+</blockquote>
+<h2 id="关于脚本"><a href="#关于脚本" class="headerlink" title="关于脚本"></a>关于脚本</h2><ol>
+<li>一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；</li>
+<li>各版本的启动脚本及配置文件名不再重合；</li>
+<li>每次运行可安装一种版本；</li>
+<li>支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；</li>
+<li>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）；</li>
+<li>友情提示：如果你有问题，请先阅读这篇<a href="https://teddysun.com/399.html">《Shadowsocks Troubleshooting》</a>之后再询问。</li>
+</ol>
+<h4 id="脚本的默认配置"><a href="#脚本的默认配置" class="headerlink" title="脚本的默认配置"></a>脚本的默认配置</h4><ul>
+<li>服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）</li>
+<li>密码：自己设定（如不设定，默认为 teddysun.com）</li>
+<li>加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）</li>
+<li>协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）</li>
+<li>混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）</li>
+<li>备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。</li>
+</ul>
+<h4 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h4><ul>
+<li><p>常规版 Windows 客户端<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+</li>
+<li><p>ShadowsocksR 版 Windows 客户端<br><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a></p>
+</li>
+</ul>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>使用root用户登录，运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh  </span><br><span class="line"></span><br><span class="line">chmod +x shadowsocks-all.sh  </span><br><span class="line"></span><br><span class="line">./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，脚本提示如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Congratulations, your_shadowsocks_version install completed!</span><br><span class="line">Your Server IP        :your_server_ip</span><br><span class="line">Your Server Port      :your_server_port</span><br><span class="line">Your Password         :your_password</span><br><span class="line">Your Encryption Method:your_encryption_method</span><br><span class="line"></span><br><span class="line">Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)</span><br><span class="line"> ss://your_encryption_method:your_password@your_server_ip:your_server_port</span><br><span class="line">Your QR Code has been saved as a PNG file path:</span><br><span class="line"> your_path.png</span><br><span class="line"></span><br><span class="line">Welcome to visit:https://teddysun.com/486.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
+<p>到此安装完成，就是这样简单，现在，拿出您的小火箭，Go Go Go!  </p>
+<h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>若已安装多个版本，则卸载时也需多次运行（每次卸载一种）</p>
+<p>使用root用户登录，运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./shadowsocks-all.sh uninstall</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Shadowsocks-Python 版：</span><br><span class="line">/etc/init.d/shadowsocks-python start | stop | restart | status</span><br><span class="line">  </span><br><span class="line">ShadowsocksR 版：</span><br><span class="line">/etc/init.d/shadowsocks-r start | stop | restart | status</span><br><span class="line">  </span><br><span class="line">Shadowsocks-Go 版：</span><br><span class="line">/etc/init.d/shadowsocks-go start | stop | restart | status</span><br><span class="line">  </span><br><span class="line">Shadowsocks-libev 版：</span><br><span class="line">/etc/init.d/shadowsocks-libev start | stop | restart | status</span><br></pre></td></tr></table></figure>
+<h3 id="各版本默认配置文件"><a href="#各版本默认配置文件" class="headerlink" title="各版本默认配置文件"></a>各版本默认配置文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Shadowsocks-Python 版：</span><br><span class="line">/etc/shadowsocks-python/config.json</span><br><span class="line">  </span><br><span class="line">ShadowsocksR 版：</span><br><span class="line">/etc/shadowsocks-r/config.json</span><br><span class="line">  </span><br><span class="line">Shadowsocks-Go 版：</span><br><span class="line">/etc/shadowsocks-go/config.json</span><br><span class="line">  </span><br><span class="line">Shadowsocks-libev 版：</span><br><span class="line">/etc/shadowsocks-libev/config.json</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><ul>
+<li><p>2019 年 01 月 11 日：<br>1、升级：libsodium 到最新版本 1.0.17；<br>2、升级：mbedtls 到最新版本 2.16.0；  </p>
+</li>
+<li><p>2018 年 11 月 05 日：<br>1、升级：使用 Github 上最新代码编译出 Go 版二进制可执行文件，版本号 1.2.2。  </p>
+</li>
+<li><p>2018 年 06 月 01 日：<br>1、修正：在启用了插件 simple-obfs 的情况下，libev 版启动失败的问题；<br>2、修正：在使用 &#x2F;etc&#x2F;init.d&#x2F;shadowsocks-libev restart 命令重启 libev 版服务端时，偶尔出现的 “bind: Address already in use” 问题；<br>3、修正：移除 libev 版配置文件中的 local_address 字段；<br>4、修改：不再默认使用 root 用户启动，改为使用 nobody 用户启动 libev 版服务端 ss-server；<br>5、升级：mbedtls 到版本 2.9.0；<br>6、修改：libev 版启动脚本中的 -u 参数（即同时启用 TCP 和 UDP 模式），改到配置文件里配置为 “mode”: “tcp_and_udp”；<br>7、修改：libev 版配置文件的内置 NameServers 为 8.8.8.8，默认是从 &#x2F;etc&#x2F;resolv.conf 中取得。  </p>
+</li>
+<li><p>以下省略……</p>
+</li>
+</ul>
+<h2 id="更多单版本-Shadowsocks-服务端一键安装脚本"><a href="#更多单版本-Shadowsocks-服务端一键安装脚本" class="headerlink" title="更多单版本 Shadowsocks 服务端一键安装脚本"></a>更多单版本 Shadowsocks 服务端一键安装脚本</h2><ul>
+<li><a href="https://teddysun.com/342.html">Shadowsocks Python 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
+<li><a href="https://shadowsocks.be/9.html">ShadowsocksR 版一键安装脚本（CentOS，Debian，Ubuntu）</a>  </li>
+<li><a href="https://teddysun.com/357.html">CentOS 下 Shadowsocks-libev 一键安装脚本</a>  </li>
+<li><a href="https://teddysun.com/358.html">Debian 下 Shadowsocks-libev 一键安装脚本</a>  </li>
+<li><a href="https://teddysun.com/392.html">Shadowsocks-go 一键安装脚本（CentOS，Debian，Ubuntu）</a></li>
+</ul>
+<p><strong>注意：以上单版本不可与该四合一版本混用。</strong></p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地解决 CentOS7 无法启动并出现 Failed to set MokListRT 的错误</title>
+    <url>/2019/ru-he-you-ya-di-jie-jue-centos7-wu-fa-qi-dong-bing-chu-xian-failed-to-set-moklistrt-de-cuo-wu/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>&emsp;&emsp;今天突然心血来潮，将我的 Ubuntu 18.04 系统给干掉了，在 <a href="https://www.centos.org/">CentOS Project</a> 里下了一个最新版的 <a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso">CentOS7 X86_64 1801</a> ISO刻录光碟后进行 CentOS 系统的安装，安装完成重启后却发现开不了机，报错内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Failed to set MokListRT: Invalid Parameter</span><br><span class="line">Something as gone seriously wrong: import_mok_state() failed:</span><br><span class="line">Invalid Parameter</span><br></pre></td></tr></table></figure>
+
+<h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>&emsp;&emsp; 有问题，上 Google ，查了一下发现错误原因主要是由于 <code>shim</code> 和 <code>mokutil</code> 两个软件包升级到高版本后，不支持我这台破机的配置，所以解决方法就是对这两个版本进行一些优雅的小操作。  </p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li><p>使用 CentOS7 的启动盘启动你的电脑后，选择点第三项 <code>Troubleshooting</code> 并回车，然后按照下面的顺序操作：<code>Troubleshooting</code> -&gt; <code>Rescue media</code> -&gt; <code>输入 1</code> 后继续以下的操作。</p>
+</li>
+<li><p>在当前出现的终端下输入下面命令，命令完成后电脑会重启：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/efi/EFI/centos</span><br><span class="line">cp grubx64.efi shimx64.efi</span><br><span class="line">exit</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在完成上面的命令后，你应该就可以正常进入系统了。</p>
+</li>
+<li><p>之后，我们还需要使用用管理员权限运行terminal终端,将  <code>shim</code> 和 <code>mokutil</code> 的两个包进行升级排除，免得以后一不小心升级了又要重新操作一番 ;)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;exclude=shim*_,_mokutil*&#x27; &gt;&gt; /etc/yum.conf</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<p>这样，以后你使用 <code>yum update</code> 命令进行升级也不会升级这两个包了。</p>
+</li>
+</ol>
+<p>最后，附上参考文章的地址 <a href="https://angrysysadmins.tech/index.php/2018/12/grassyloki/centos-7-failed-set-moklistrt/">CentOS 7: Failed to set MokListRT: Invalid Parameter</a></p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Warp，将你的VPS变成IPV4/IPV6双栈VPS</title>
+    <url>/2021/an-zhuang-warp-jiang-ni-de-vps-bian-cheng-ipv4-ipv6-shuang-zhan-vps/</url>
+    <content><![CDATA[<p>  在VPS套上WARP后，可以令你的单线纯ipv4或者纯ipv6的VPS变成ipv4&#x2F;ipv6双杀的双栈VPS！换句简单的话来说，就是原来只能访问IPV6或者IPV4资源的VPS，在安装了Warp之后，就能同时访问IPV4和IPV6的网络资源！</p>
+<p>  P.S. 如果您的VPS是OpenVZ的VPS，请自行在服务商的控制面板开启TUN模块后使用脚本开启Warp。</p>
+<h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><ul>
+<li>VPS 一台</li>
+</ul>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><p>本文基于Euserv VPS的Debian11系统的部署环境，如您的系统不是Debian 11的建议自行上网另找方法。</p>
+<ol>
+<li><p>SSH登录VPS</p>
+</li>
+<li><p>复制、粘贴并运行以下代码<br><code>wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</code></p>
+</li>
+<li><p>选择1或2选项</p>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/HrtZvJ1cwyYSKmI.png"></p>
+<ol start="4">
+<li>输入Warp+的key，如没有按Enter键跳过，使用免费账号 (CloudFlare Warp+和免费账号的速度都差不多，没什么区别)</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/LR5vTi6DzOdACfx.png"></p>
+<ol start="5">
+<li>选择内核方案（按照脚本作者的介绍，BoringTun &gt; Wireguard-GO）</li>
+</ol>
+<p><img src="https://s2.loli.net/2021/12/10/JirjzBFXNhmaQAe.png"></p>
+<ol start="6">
+<li>等待安装依赖<br><img src="https://s2.loli.net/2021/12/10/kMSKw4Z7pGrT9hA.png"></li>
+</ol>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol>
+<li><p>脚本提示获取WARP IP 失败？<br> 请重新运行脚本安装，OpenVZ的机器请检查自己的TUN模块是否开启</p>
+</li>
+<li><p>为什么warp的ip地区和vps的地区不一样<br> CloudFlare的一些玄学问题吧，具体不清楚</p>
+</li>
+<li><p>为何我无法启用WARP？<br> 有可能你使用的是OpenVZ的VPS，请在其服务商官网打开TUN之后输入命令： <code>cat /dev/net/tun</code> 查看TUN模块是否启用。</p>
+</li>
+</ol>
+<p>返回结果： <code>cat: /dev/net/tun:  File descriptor in bad state</code>  即代表已经开启TUN模块</p>
+<p>返回结果：<code>cat: /dev/net/tun:  Operation not permitted</code>  即代表TUN模块未开启</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/wo-hui-lai-la/</url>
+    <content><![CDATA[<h3 id="我回来啦！！！"><a href="#我回来啦！！！" class="headerlink" title="我回来啦！！！"></a>我回来啦！！！</h3>]]></content>
+  </entry>
+  <entry>
+    <title>时光匆匆催人老，少年如今苍须飘</title>
+    <url>/2019/shi-guang-cong-cong-cui-ren-lao-shao-nian-ru-jin-cang-xu-piao/</url>
+    <content><![CDATA[<blockquote>
+<p>未老已衰之石, 未冷已冻之水,<br>未生已死之身, 未灼已化之魂。</p>
+</blockquote>
+<p>&emsp;&emsp;在人生的3.0阶段，最大的感慨就是再也熬不起夜了。我必须像个5.0版本的老人家一样早睡，但又不能像他一样早起，那种熬个通宵，睡一觉又生龙活虎的年纪，那些青葱时光，终究还是，逝去了。再也不会回来。嗯，的确是个悲伤的故事啊。  </p>
+<p>&emsp;&emsp;故人今在否？旧江山浑是新愁。欲买桂花同载酒，终不似，少年游。–（宋）刘过《唐多令·芦叶满汀洲》  </p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>给博客备案啦，虽然是萌站的那种备案</title>
+    <url>/2021/gei-bo-ke-bei-an-la-sui-ran-shi-meng-zhan-de-na-chong-bei-an/</url>
+    <content><![CDATA[<p>今天，我怀着亿点点激动的心情宣布，这个小博客网站，已经正式成为萌站的一份子了！！！</p>
+<p><img src="https://i.loli.net/2021/12/02/Is6TeFoL9PUCjp3.png" alt="截屏2021-12-02 18.09.38.png"></p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自用的优秀网站汇总(持续更新)</title>
+    <url>/2019/zi-yong-de-you-xiu-wang-zhan-hui-zong-chi-xu-geng-xin/</url>
+    <content><![CDATA[<p>update(09&#x2F;16&#x2F;2022):<br>    Add <a href="https://www.websiteplanet.com/zh-hans/webtools/favicon-generator/">Websiteplant.com</a>,  thanks for Maja Ampov</p>
+<h4 id="🔨tool"><a href="#🔨tool" class="headerlink" title="🔨tool"></a>🔨tool</h4><ul>
+<li><a href="http://emojihomepage.com/">emoji homepage</a> (emoji表情)</li>
+<li><a href="http://jsoneditoronline.org/">json editor online</a> (在线json格式转换)</li>
+<li><a href="https://processon.com/;jsessionid=240B6EBC172A590374E213A3701132C2.jvm1">processOn</a> (流程图)</li>
+<li><a href="https://tinypng.com/">tiny png</a> (图片压缩)</li>
+<li><a href="https://www.onlinevideoconverter.com/youtube-converter">youtube视频下载</a> (只需一个网页链接就可下载各大视频网站视频)</li>
+<li><a href="http://www.liantu.com/">在线二维码生成</a></li>
+<li><a href="https://www.alexa.com/topsites">Alexa</a> (网站全球排名)</li>
+<li><a href="https://www.supfree.net/">在线查询</a> (很牛逼)</li>
+<li><a href="https://www.the-numbers.com/">the-numbers</a> (电影全球票房查询)</li>
+<li><a href="https://trends.google.com/trends/explore?date=all&q=react,vue,angular">谷歌趋势</a> (查询任何想要比较的关键字)</li>
+<li><a href="https://codepen.io/">codepen</a>(在线代码编辑及大量炫酷例子)</li>
+<li><a href="https://www.dafont.com//">dafont</a> (大量漂亮字体)</li>
+</ul>
+<h4 id="💬技术-论坛"><a href="#💬技术-论坛" class="headerlink" title="💬技术&amp;论坛"></a>💬技术&amp;论坛</h4><ul>
+<li><a href="https://github.com/">github</a> (全球最大代码托管社区)</li>
+<li><a href="https://stackoverflow.com/">stackoverflow</a> (全球最大技术问答社区)</li>
+<li><a href="https://www.reddit.com/">reddit</a> (全球最大论坛)</li>
+<li><a href="https://tympanus.net/codrops/">codrops</a> (大量优秀页面效果)</li>
+<li><a href="https://medium.com/">medium</a> (各类优秀文章)</li>
+<li><a href="https://www.v2ex.com/">v2ex</a> (全网最佳)</li>
+<li><a href="https://segmentfault.com/news">segmentfault</a> (思否 优秀)</li>
+<li><a href="https://cnodejs.org/">node中文社区</a>(Node.js专业中文社区)</li>
+<li><a href="https://www.cnblogs.com/leinov">博客园</a> (代码改变世界)</li>
+<li><a href="https://juejin.im/">掘金</a> (开发者成长社区)</li>
+<li><a href="http://www.infoq.com/">infoQ</a></li>
+<li><a href="http://blog.jobbole.com/">伯乐在线</a></li>
+<li><a href="https://developers.weixin.qq.com/community">微信开放社区</a></li>
+<li><a href="http://react-china.org/">react中文论坛</a></li>
+<li><a href="https://forum.vuejs.org/top/all">vue论坛</a></li>
+<li><a href="https://aotu.io/">凹凸实验室</a> (优秀前端动效体验)</li>
+</ul>
+<h4 id="🎨设计-绘画类"><a href="#🎨设计-绘画类" class="headerlink" title="🎨设计&amp;绘画类"></a>🎨设计&amp;绘画类</h4><ul>
+<li><a href="https://www.websiteplanet.com/zh-hans/webtools/favicon-generator/">Websiteplanet.com</a> (单张支持最大5MB)</li>
+<li><a href="https://dribbble.com/">dribbble</a> (最优秀的ui设计网站)</li>
+<li><a href="https://www.behance.net/">Behance</a> (最优秀的平面设计网站)</li>
+<li><a href="https://kuler.adobe.com/explore/newest/">adobe color</a> (adobe 色盘)</li>
+<li><a href="http://www.google.com/design/">google design</a> (谷歌设计)</li>
+<li><a href="https://www.artstation.com/">artstation</a> (大量优秀原画)</li>
+<li><a href="https://www.deviantart.com/">deviantart</a> (牛逼原画)</li>
+<li><a href="http://colrd.com/">colrd</a> (色彩搭配)</li>
+<li><a href="https://dryicons.com/">dryicons</a> (大量icon)</li>
+<li><a href="http://www.ui.cn/">UI中国</a> (专业用户体验设计平台)</li>
+<li><a href="http://www.zcool.com.cn/">站酷</a> (设计师互动平台 大神很多)</li>
+<li><a href="http://www.uiimg.com/">UI图</a> (UI设计)</li>
+<li><a href="https://ui8.net/">UI8</a>(UI设计)</li>
+<li><a href="http://www.iconfont.cn/">阿里巴巴矢量图标库</a> (大量优秀icon)</li>
+</ul>
+<h4 id="🏛云课堂"><a href="#🏛云课堂" class="headerlink" title="🏛云课堂"></a>🏛云课堂</h4><ul>
+<li><a href="http://study.163.com/">网易云课堂</a></li>
+<li><a href="http://www.imooc.com/">慕课网</a></li>
+<li><a href="http://www.jikexueyuan.com/">极客学院</a></li>
+<li><a href="https://ke.qq.com/">腾讯课堂</a></li>
+<li><a href="https://time.geekbang.org/">极客时间</a> </li>
+<li><a href="https://www.sanjieke.cn/">三节课</a> </li>
+<li><a href="http://www.maiziedu.com/">麦子学院</a></li>
+<li><a href="http://www.ibeifeng.com/">北风网</a></li>
+<li><a href="http://www.howzhi.com/">好知网</a></li>
+<li><a href="http://www.codecademy.com/learn">codecademy</a></li>
+<li><a href="https://www.pluralsight.com/">pluralsight</a></li>
+</ul>
+<h4 id="💰区块链"><a href="#💰区块链" class="headerlink" title="💰区块链"></a>💰区块链</h4><ul>
+<li><a href="https://www.huobi.com/">火币</a> (交易)</li>
+<li><a href="http://www.8btc.com/">巴比特</a> (社区)</li>
+<li><a href="https://www.feixiaohao.com/">非小号</a> (社区 全球排名)</li>
+<li><a href="https://bihu.com/">币乎</a> (文章社区)</li>
+<li><a href="https://www.cryptokitties.co/">迷恋猫</a></li>
+<li><a href="https://dragonex.im/zh-hans/trade/index/btc_usdt">龙币</a> (我就是在这上面买币的)</li>
+</ul>
+<h4 id="⛷-优秀个人-组织博客"><a href="#⛷-优秀个人-组织博客" class="headerlink" title="⛷ 优秀个人&amp;组织博客"></a>⛷ 优秀个人&amp;组织博客</h4><ul>
+<li><p><a href="http://www.ruanyifeng.com/blog/">阮一峰老师</a> </p>
+</li>
+<li><p><a href="https://www.liaoxuefeng.com/">廖雪峰</a>  </p>
+</li>
+<li><p><a href="https://justjavac.com/">justjavac</a></p>
+</li>
+<li><p><a href="http://www.alloyteam.com/">腾讯全端技术团队</a></p>
+</li>
+<li><p><a href="http://www.aliued.cn/">阿里UED</a></p>
+</li>
+<li><p><a href="https://tech.meituan.com/">美团技术团队</a></p>
+</li>
+<li><p><a href="https://75team.com/">360奇舞团</a> (360大前端团队)</p>
+</li>
+<li><p><a href="http://blog.fens.me/series-nodejs/">粉丝日志</a></p>
+</li>
+<li><p><a href="https://www.helloweba.net/">helloweta</a></p>
+<p>持续更新中…</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>网站分享</tag>
+      </tags>
+  </entry>
+</search>
