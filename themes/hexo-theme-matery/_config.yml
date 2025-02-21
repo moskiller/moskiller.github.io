@@ -23,7 +23,7 @@ menu:
     url: /friends
     icon: fas fa-address-book
   Status:
-    url: https://status.fanyc.eu.org
+    url: https://nz.fanyc.us.kg
     icon: fas fa-thermometer-quarter      
   # 二级菜单写法如下
   #Medias:
