@@ -68,6 +68,18 @@
       </tags>
   </entry>
   <entry>
+    <title>一些随想...</title>
+    <url>/2025/yi-xie-sui-xiang/</url>
+    <content><![CDATA[<h1 id="一些随想……"><a href="#一些随想……" class="headerlink" title="一些随想……"></a>一些随想……</h1><p>Hexo用了也有不短时间了，现在一些插件都有一些问题或者漏洞了，这个模板也有点审美疲劳了…… 估计后面会更换一些东西，先看看吧，有时间再来弄一下</p>
+]]></content>
+      <categories>
+        <category>心情の随笔</category>
+      </categories>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不知不觉又一年</title>
     <url>/2024/bu-zhi-bu-jue-you-yi-nian/</url>
     <content><![CDATA[<p>烟花短暂，我们永远。</p>
@@ -233,55 +245,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何优雅地保存你在Github上的Hexo源代码</title>
-    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
-    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
-<hr>
-<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
-<li><p>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
-</li>
-<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
-</li>
-<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
-</li>
-<li><p>使用git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:moskiller&#x2F;moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
-</li>
-<li><p>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
-</li>
-<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（此时当前分支应显示为 Source ）</span><br></pre></td></tr></table></figure></li>
-<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
-</li>
-<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
-</li>
-</ol>
-<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
-<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
-</li>
-<li><p>首先在终端里依次执行:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin Source</span><br></pre></td></tr></table></figure></li>
-<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
-</li>
-</ol>
-<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
-<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
-<ol>
-<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
-<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line"></span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![rejected]  master-&gt;master(fetch first)  </span><br><span class="line">error:failed to push some refs to <span class="string">&#x27;https://github.com/xxx/xxx.git&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
-<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
-]]></content>
-      <categories>
-        <category>优雅の分享</category>
-      </categories>
-      <tags>
-        <tag>Github Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何优雅地一键安装最新内核并开启Google BBR</title>
     <url>/2019/ru-he-you-ya-di-yi-jian-an-zhuang-zui-xin-nei-he-bing-kai-qi-google-bbr/</url>
     <content><![CDATA[<p>&emsp;&emsp;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。<br>&emsp;&emsp;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。于是就有大神根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 的脚本。</p>
@@ -316,6 +279,58 @@
       </categories>
       <tags>
         <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何优雅地保存你在Github上的Hexo源代码</title>
+    <url>/2019/ru-he-you-ya-di-bao-cun-ni-zai-github-shang-de-hexo-yuan-dai-ma/</url>
+    <content><![CDATA[<p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
+<hr>
+<h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
+<li>这里我假定你已经注册了<a href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a href="https://moskiller.github.io/">moskiller.github.io</a> 。</li>
+<li>然后，在这个Repository 里创建两个分支：Master 与 Source。</li>
+<li>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</li>
+<li>使用git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">git@github.com</a>:moskiller&#x2F;moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</li>
+<li>安装 Hexo 前，请先确认你是否已安装<a href="http://nodejs.org/">Node.js</a> 和 <a href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</li>
+<li>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（此时当前分支应显示为 Source ）</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
+</li>
+<li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
+</li>
+</ol>
+<h3 id="二、日常发表博文的动作"><a href="#二、日常发表博文的动作" class="headerlink" title="二、日常发表博文的动作"></a>二、日常发表博文的动作</h3><ol>
+<li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
+</li>
+<li><p>首先在终端里依次执行:</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin Source</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</li>
+</ol>
+<p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
+<h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
+<ol>
+<li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
+<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line"></span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![rejected]  master-&gt;master(fetch first)  </span><br><span class="line">error:failed to push some refs to <span class="string">&#x27;https://github.com/xxx/xxx.git&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
+<p>输入 <code>git pull</code>，然后再执行 <code>git push</code> 就可以了。</p>
+]]></content>
+      <categories>
+        <category>优雅の分享</category>
+      </categories>
+      <tags>
+        <tag>Github Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -523,15 +538,18 @@
 <li><p>使用 CentOS7 的启动盘启动你的电脑后，选择点第三项 <code>Troubleshooting</code> 并回车，然后按照下面的顺序操作：<code>Troubleshooting</code> -&gt; <code>Rescue media</code> -&gt; <code>输入 1</code> 后继续以下的操作。</p>
 </li>
 <li><p>在当前出现的终端下输入下面命令，命令完成后电脑会重启：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/efi/EFI/centos</span><br><span class="line">cp grubx64.efi shimx64.efi</span><br><span class="line">exit</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/efi/EFI/centos</span><br><span class="line">cp grubx64.efi shimx64.efi</span><br><span class="line">exit</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li><p>在完成上面的命令后，你应该就可以正常进入系统了。</p>
 </li>
 <li><p>之后，我们还需要使用用管理员权限运行terminal终端,将  <code>shim</code> 和 <code>mokutil</code> 的两个包进行升级排除，免得以后一不小心升级了又要重新操作一番 ;)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;exclude=shim*_,_mokutil*&#x27; &gt;&gt; /etc/yum.conf</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
-<p>这样，以后你使用 <code>yum update</code> 命令进行升级也不会升级这两个包了。</p>
 </li>
 </ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;exclude=shim*_,_mokutil*&#x27; &gt;&gt; /etc/yum.conf</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<p>这样，以后你使用 <code>yum update</code> 命令进行升级也不会升级这两个包了。</p>
 <p>最后，附上参考文章的地址 <a href="https://angrysysadmins.tech/index.php/2018/12/grassyloki/centos-7-failed-set-moklistrt/">CentOS 7: Failed to set MokListRT: Invalid Parameter</a></p>
 ]]></content>
       <categories>

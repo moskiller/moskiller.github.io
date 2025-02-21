@@ -135,7 +135,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a target="_blank" rel="noopener" href="https://status.fanyc.eu.org" class="waves-effect waves-light">
+    <a target="_blank" rel="noopener" href="https://nz.fanyc.us.kg" class="waves-effect waves-light">
       
       <i class="fas fa-thermometer-quarter" style="zoom: 0.6;"></i>
       
@@ -247,7 +247,7 @@
         
         <li class="m-nav-item">
 	  
-		<a target="_blank" rel="noopener" href="https://status.fanyc.eu.org" class="waves-effect waves-light">
+		<a target="_blank" rel="noopener" href="https://nz.fanyc.us.kg" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-thermometer-quarter"></i>
 			
@@ -495,7 +495,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    976
+                    965
                 </div>
                 
 
@@ -528,18 +528,15 @@
                 <p>  今天重新回到博客的大家庭里，却发现很多东西，比如hexo配置、markdown标记命令等都忘记了，为了以后不再出现此情况，特此记下这些流程：</p>
 <hr>
 <h3 id="一、搭建博客的动作"><a href="#一、搭建博客的动作" class="headerlink" title="一、搭建博客的动作"></a>一、搭建博客的动作</h3><ol>
-<li><p>这里我假定你已经注册了<a target="_blank" rel="noopener" href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a target="_blank" rel="noopener" href="https://moskiller.github.io/">moskiller.github.io</a> 。</p>
-</li>
-<li><p>然后，在这个Repository 里创建两个分支：Master 与 Source。</p>
-</li>
-<li><p>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</p>
-</li>
-<li><p>使用git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:moskiller&#x2F;moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</p>
-</li>
-<li><p>安装 Hexo 前，请先确认你是否已安装<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> 和 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</p>
-</li>
-<li><p>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（此时当前分支应显示为 Source ）</span><br></pre></td></tr></table></figure></li>
+<li>这里我假定你已经注册了<a target="_blank" rel="noopener" href="https://github.com/">Github</a> ，登录github后，新建一个仓库(Repository)，Repository name就填xxxxx.github.io，xxxxx是你的用户名，比如我这里填写的是： <a target="_blank" rel="noopener" href="https://moskiller.github.io/">moskiller.github.io</a> 。</li>
+<li>然后，在这个Repository 里创建两个分支：Master 与 Source。</li>
+<li>设置 Source 为默认分支（因为我们只需要管理这个分支上的Hexo源文件）。</li>
+<li>使用git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">git@github.com</a>:moskiller&#x2F;moskiller.github.io.git拷贝仓库，请将moskiller更换为你的用户名。</li>
+<li>安装 Hexo 前，请先确认你是否已安装<a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> 和 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a> ，(MacOS系统自带旧版本git，无需安装了，当然你也可以升级安装更新的版本)。如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。</li>
+<li>在本地的 <code>你的用户名.github.io</code> 文件夹下通过终端或者bash依次运行以下命令：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git（此时当前分支应显示为 Source ）</span><br></pre></td></tr></table></figure>
+<ol start="6">
 <li><p>hexo安装好后，修改根目录中的_config.yml中的deploy参数，这里的分支应填写为 <strong>Master</strong>，保存并关闭文件。</p>
 </li>
 <li><p>然后就是你日常写作等那些命令了，比如 hexo new “hello world”等，不再详解，你可到 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo.io</a>官网这里查看。</p>
@@ -549,16 +546,22 @@
 <li><p>在本地对博客添加新博文、修改等等后，推荐通过下面的命令进行管理。</p>
 </li>
 <li><p>首先在终端里依次执行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin Source</span><br></pre></td></tr></table></figure></li>
-<li><p>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</p>
 </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m “…”</span><br><span class="line">git push origin Source</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>然后才执行 **<code>hexo clean &amp;&amp; hexo g -d </code>**发布文章到 master 的分支上。</li>
 </ol>
 <p><strong>当然，如果你认为不需要备份内容的话，你可以直接输入第３步的命令(即 hexo clean &amp;&amp; hexo -g d, 或者直接 hexo -g d )进行上传。但作为曾经的受害者，我敬告你尽量按照以上命令进行发布，否则当某一天你的电脑硬盘坏了、系统重装等悲催的情况出现时，那就呵呵了</strong></p>
 <h3 id="三、硬盘损坏、系统重装等本地资料丢失后的动作"><a href="#三、硬盘损坏、系统重装等本地资料丢失后的动作" class="headerlink" title="三、硬盘损坏、系统重装等本地资料丢失后的动作"></a>三、硬盘损坏、系统重装等本地资料丢失后的动作</h3><p>当你真的不幸碰到以上我所说的系统重装、硬盘损坏等情况后，又或者你突然间想在其他电脑上发布或修改博客文章时，如果你严格按照上一项中建议的命令进行发布的话，那么恭喜你，你可以使用下面的动作进行操作了，<strong>如果你并没有按照操作的话….. 呵呵…</strong></p>
 <ol>
 <li>使用命令 <code>git clone git@github.com:moskiller/moskiller.github.io.git</code> 拷贝仓库（请将 moskiller 修改为你的用户名）。</li>
-<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line"></span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br></pre></td></tr></table></figure></li>
+<li>在本地新拷贝的 <code>你的用户名.github.io</code> 文件夹下通过终端或者 bash依次执行下列命令就OK了：</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git </span><br><span class="line"></span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br><span class="line">**（切记！不要输入　hexo init　这条命令，这是新建初始化的命令！！！）**</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="9-30日更新"><a href="#9-30日更新" class="headerlink" title="9.30日更新"></a><u>9.30日更新</u></h3><p>今天修改了一下文件，在执行 <code>git push</code> 命令推送的时候，报如下错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![rejected]  master-&gt;master(fetch first)  </span><br><span class="line">error:failed to push some refs to <span class="string">&#x27;https://github.com/xxx/xxx.git&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>查了一下google，发现出错的原因是因为我刚才在github网站上手动修改了 CNAME 文件。<br>解决的办法就是先更新服务器上的变化到本地，然后才能提交。</p>
@@ -1106,7 +1109,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2024</span>
+                <span id="year">2018-2025</span>
             
             <a href="/about" target="_blank">VinceNT.范</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

@@ -132,7 +132,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a target="_blank" rel="noopener" href="https://status.fanyc.eu.org" class="waves-effect waves-light">
+    <a target="_blank" rel="noopener" href="https://nz.fanyc.us.kg" class="waves-effect waves-light">
       
       <i class="fas fa-thermometer-quarter" style="zoom: 0.6;"></i>
       
@@ -244,7 +244,7 @@
         
         <li class="m-nav-item">
 	  
-		<a target="_blank" rel="noopener" href="https://status.fanyc.eu.org" class="waves-effect waves-light">
+		<a target="_blank" rel="noopener" href="https://nz.fanyc.us.kg" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-thermometer-quarter"></i>
 			
@@ -530,15 +530,18 @@
 <li><p>使用 CentOS7 的启动盘启动你的电脑后，选择点第三项 <code>Troubleshooting</code> 并回车，然后按照下面的顺序操作：<code>Troubleshooting</code> -&gt; <code>Rescue media</code> -&gt; <code>输入 1</code> 后继续以下的操作。</p>
 </li>
 <li><p>在当前出现的终端下输入下面命令，命令完成后电脑会重启：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/efi/EFI/centos</span><br><span class="line">cp grubx64.efi shimx64.efi</span><br><span class="line">exit</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chroot /mnt/sysimage</span><br><span class="line">cd /boot/efi/EFI/centos</span><br><span class="line">cp grubx64.efi shimx64.efi</span><br><span class="line">exit</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li><p>在完成上面的命令后，你应该就可以正常进入系统了。</p>
 </li>
 <li><p>之后，我们还需要使用用管理员权限运行terminal终端,将  <code>shim</code> 和 <code>mokutil</code> 的两个包进行升级排除，免得以后一不小心升级了又要重新操作一番 ;)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;exclude=shim*_,_mokutil*&#x27; &gt;&gt; /etc/yum.conf</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
-<p>这样，以后你使用 <code>yum update</code> 命令进行升级也不会升级这两个包了。</p>
 </li>
 </ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;exclude=shim*_,_mokutil*&#x27; &gt;&gt; /etc/yum.conf</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<p>这样，以后你使用 <code>yum update</code> 命令进行升级也不会升级这两个包了。</p>
 <p>最后，附上参考文章的地址 <a target="_blank" rel="noopener" href="https://angrysysadmins.tech/index.php/2018/12/grassyloki/centos-7-failed-set-moklistrt/">CentOS 7: Failed to set MokListRT: Invalid Parameter</a></p>
 
                 
@@ -1083,7 +1086,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2018-2024</span>
+                <span id="year">2018-2025</span>
             
             <a href="/about" target="_blank">VinceNT.范</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
