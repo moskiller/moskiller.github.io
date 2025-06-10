@@ -3316,10 +3316,10 @@ node-gyp@^11.0.0:
     tar "^7.4.3"
     which "^5.0.0"
 
-node@^23.9.0:
-  version "23.9.0"
-  resolved "https://registry.yarnpkg.com/node/-/node-23.9.0.tgz#79e02faca7e2d8a2566918571e0b09d043585121"
-  integrity sha512-G1UAqOInNxL2HkLV0i3ZEgnNsSsWsf4tlpMpR44s7jYPEH8sCXObnxgyphibOiHdyheRkUzE9lRJXJ/4n0/KdA==
+node@^24.2.0:
+  version "24.2.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-24.2.0.tgz#d338b48b00ee0e75452583a53fcd08c73f9f69e2"
+  integrity sha512-+LxcguHN48uLeFUdC8w9SGbJhuOklUrCgl0K3dmqhXdokzwd83HKXUbeA8JLd41G+77W9Ovq7FXGCij74Ff/tw==
   dependencies:
     node-bin-setup "^1.0.0"
 
